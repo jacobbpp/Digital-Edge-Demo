@@ -215,11 +215,6 @@
     <h3>Jordan Whitworth</h3>
     <p>Recruitment consultant apprenticeship coach who enjoys helping candidates find opportunities that can shape their careers.</p>
   </article>
-  <article>
-    <span class="de-card__label">Training</span>
-    <h3>Shaun McDonald</h3>
-    <p>Head of Training for Technology Apprenticeships, supporting tutor teams across BPP, Estio, and Firebrand.</p>
-  </article>
 </div>
 
 <details class="de-expand-box">

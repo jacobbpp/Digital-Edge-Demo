@@ -35,6 +35,11 @@ Technology work becomes easier when you understand the language, habits, and dec
     <h3>Writing Good Technical Notes</h3>
     <p>Write clearer tickets, handovers, updates, and decision notes so other people can act with confidence.</p>
   </a>
+  <a class="de-card" href="git/">
+    <span class="de-card__label">Collaboration</span>
+    <h3>Git and Version Control</h3>
+    <p>Understand commits, branches, pull requests, and the everyday Git commands used on technical projects.</p>
+  </a>
   <a class="de-card" href="code-review/">
     <span class="de-card__label">Quality</span>
     <h3>Code Review Essentials</h3>

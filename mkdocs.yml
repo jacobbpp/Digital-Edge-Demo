@@ -1,0 +1,32 @@
+site_name: Digital Edge
+site_description: Practical digital skills articles, guides, learning paths, and guided coding practice.
+site_url: https://digital-edge.local/
+repo_url: ""
+
+theme:
+  name: mkdocs
+  locale: en
+  nav_style: primary
+  highlightjs: true
+  hljs_languages:
+    - python
+    - javascript
+    - css
+
+hooks:
+  - hooks/search_filter.py
+
+nav:
+  - Home: index.md
+  - Articles: articles/index.md
+  - Guides: how-tos/index.md
+  - Events: events.md
+  - Newsletters: newsletters/index.md
+  - BPP Tech Sphere: https://open.spotify.com/show/4wLAuGMARmMNMvqGnR9iQy
+  - About: about.md
+
+extra_css:
+  - assets/css/site.css
+
+extra_javascript:
+  - assets/js/site.js

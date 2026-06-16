@@ -20,7 +20,7 @@
       (results || []).forEach((result) => {
         const pageLocation = (result.location || "").split("#")[0] || "";
         const key = pageLocation.replace(/\/$/, "") || "home";
-        if (key === "home" || key === "about") return;
+        if (key === "home") return;
 
         const existing = pages.get(key);
         const isPageResult = !(result.location || "").includes("#");
@@ -93,7 +93,7 @@
     if (utilityNav && searchItem) {
       mainNavLinks.forEach((link) => {
         const label = link.textContent.trim();
-        if (label === "BPP Tech Sphere" || label === "About") {
+        if (label === "BPP Tech Sphere") {
           const item = link.closest(".nav-item");
           if (item && item.parentElement !== utilityNav) {
             utilityNav.insertBefore(item, searchItem);

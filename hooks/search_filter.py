@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 
 
-EXCLUDED_LOCATIONS = {"", "about/"}
+EXCLUDED_LOCATIONS = {""}
 SPOTIFY_URL = "https://open.spotify.com/show/4wLAuGMARmMNMvqGnR9iQy"
 
 

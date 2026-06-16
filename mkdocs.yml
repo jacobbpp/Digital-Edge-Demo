@@ -23,7 +23,6 @@ nav:
   - Events: events.md
   - Newsletters: newsletters/index.md
   - BPP Tech Sphere: https://open.spotify.com/show/4wLAuGMARmMNMvqGnR9iQy
-  - About: about.md
 
 extra_css:
   - assets/css/site.css

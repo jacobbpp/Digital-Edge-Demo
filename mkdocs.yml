@@ -1,7 +1,7 @@
 site_name: Digital Edge
 site_description: Practical digital skills articles, guides, learning paths, and guided coding practice.
-site_url: https://digital-edge.local/
-repo_url: ""
+site_url: https://jacobbpp.github.io/Digital-Edge-Demo/
+repo_url: https://github.com/jacobbpp/Digital-Edge-Demo
 
 theme:
   name: mkdocs

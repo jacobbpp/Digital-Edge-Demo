@@ -21,8 +21,6 @@
   </a>
 </section>
 
-## Latest Thinking
-
 <div class="de-topic-browser" aria-label="Browse article topics">
   <span>Browse topics</span>
   <button type="button" data-article-tag="AI">AI</button>
@@ -37,7 +35,7 @@
 </div>
 
 <div class="de-article-list">
-  <article class="de-article-card" data-article-tags="Marketing,AI">
+  <article class="de-article-card" data-article-tags="Marketing,AI" data-article-author="David Green">
     <div class="de-article-tags" aria-label="Article tags">
       <button type="button" data-article-tag="Marketing">Marketing</button>
       <button type="button" data-article-tag="AI">AI</button>
@@ -45,10 +43,10 @@
     <a class="de-article-card__link" href="chatgpt-ads-marketing-learning-apprentices/">
       <h3>ChatGPT Ads</h3>
       <p>What advertising inside AI answers means for marketing, learning, trust, and future apprentices.</p>
-      <small>David Green · 5 June 2026</small>
     </a>
+    <p class="de-byline">By <a href="../people/david-green/" data-author-filter="David Green">David Green</a> · 5 June 2026</p>
   </article>
-  <article class="de-article-card" data-article-tags="AI,Workflows">
+  <article class="de-article-card" data-article-tags="AI,Workflows" data-article-author="Jacob Reilly-Cooper">
     <div class="de-article-tags" aria-label="Article tags">
       <button type="button" data-article-tag="AI">AI</button>
       <button type="button" data-article-tag="Workflows">Workflows</button>
@@ -56,10 +54,10 @@
     <a class="de-article-card__link" href="agentic-engineering/">
       <h3>Agentic Engineering</h3>
       <p>The next gap education needs to close as AI agents move from advice into real workflows.</p>
-      <small>Jacob Reilly-Cooper · 21 May 2026</small>
     </a>
+    <p class="de-byline">By <a href="../people/jacob-reilly-cooper/" data-author-filter="Jacob Reilly-Cooper">Jacob Reilly-Cooper</a> · 21 May 2026</p>
   </article>
-  <article class="de-article-card" data-article-tags="AI,Adoption">
+  <article class="de-article-card" data-article-tags="AI,Adoption" data-article-author="Jacob Reilly-Cooper">
     <div class="de-article-tags" aria-label="Article tags">
       <button type="button" data-article-tag="AI">AI</button>
       <button type="button" data-article-tag="Adoption">Adoption</button>
@@ -67,7 +65,7 @@
     <a class="de-article-card__link" href="from-mythos-to-fable/">
       <h3>From Mythos to Fable</h3>
       <p>A practical warning light for organisations bringing frontier AI into everyday work.</p>
-      <small>Jacob Reilly-Cooper · 15 June 2026</small>
     </a>
+    <p class="de-byline">By <a href="../people/jacob-reilly-cooper/" data-author-filter="Jacob Reilly-Cooper">Jacob Reilly-Cooper</a> · 15 June 2026</p>
   </article>
 </div>

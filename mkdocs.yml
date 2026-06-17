@@ -21,7 +21,8 @@ nav:
   - Guides: how-tos/index.md
   - Events: events.md
   - Newsletters: newsletters/index.md
-  - BPP Tech Sphere: https://open.spotify.com/show/4wLAuGMARmMNMvqGnR9iQy
+  - People: people/index.md
+  - Tech Sphere Podcast: https://open.spotify.com/show/4wLAuGMARmMNMvqGnR9iQy
 
 extra_css:
   - assets/css/site.css

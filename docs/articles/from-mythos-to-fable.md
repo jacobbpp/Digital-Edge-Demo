@@ -9,7 +9,7 @@
     <h1>Mythos to Fable: The Warning Light Just Entered the Workflow</h1>
     <p>Frontier AI is becoming more capable, more accessible, and more deeply connected to everyday work. The lesson is not panic. It is readiness.</p>
     <div class="de-article-meta">
-      <span>Jacob Reilly-Cooper</span>
+      <a href="../../people/jacob-reilly-cooper/">Jacob Reilly-Cooper</a>
       <span>Head of Tech Learning</span>
       <span>15 June 2026</span>
       <span>7 min read</span>

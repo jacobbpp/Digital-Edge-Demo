@@ -86,21 +86,6 @@
       link.setAttribute("rel", "noopener noreferrer");
     });
 
-    const utilityNav = document.querySelector("#navbar-collapse > .navbar-nav.ms-md-auto");
-    const searchItem = utilityNav ? utilityNav.querySelector('[data-bs-target="#mkdocs_search_modal"]')?.closest(".nav-item") : null;
-    const mainNavLinks = document.querySelectorAll("#navbar-collapse > .navbar-nav:not(.ms-md-auto) .nav-link");
-
-    if (utilityNav && searchItem) {
-      mainNavLinks.forEach((link) => {
-        const label = link.textContent.trim();
-        if (label === "BPP Tech Sphere") {
-          const item = link.closest(".nav-item");
-          if (item && item.parentElement !== utilityNav) {
-            utilityNav.insertBefore(item, searchItem);
-          }
-        }
-      });
-    }
   }
 
   if (document.readyState === "loading") {
@@ -303,10 +288,12 @@
     function setFilter(tag, updateUrl) {
       const activeTag = tag || "";
       const activeKey = normalise(activeTag);
+      const activeAuthor = normalise(new URLSearchParams(window.location.search).get("author") || "");
 
       cards.forEach((card) => {
         const tags = (card.dataset.articleTags || "").split(",").map(normalise);
-        card.hidden = Boolean(activeKey) && !tags.includes(activeKey);
+        const author = normalise(card.dataset.articleAuthor);
+        card.hidden = (Boolean(activeKey) && !tags.includes(activeKey)) || (Boolean(activeAuthor) && author !== activeAuthor);
       });
 
       tagButtons.forEach((button) => {
@@ -314,8 +301,12 @@
       });
 
       if (status && statusText) {
-        status.hidden = !activeKey;
-        statusText.textContent = activeKey ? `Showing articles tagged ${activeTag}` : "";
+        status.hidden = !activeKey && !activeAuthor;
+        if (activeAuthor) {
+          statusText.textContent = `Showing articles by ${new URLSearchParams(window.location.search).get("author")}`;
+        } else {
+          statusText.textContent = activeKey ? `Showing articles tagged ${activeTag}` : "";
+        }
       }
 
       if (updateUrl) {
@@ -325,6 +316,7 @@
         } else {
           url.searchParams.delete("tag");
         }
+        url.searchParams.delete("author");
         window.history.replaceState({}, "", url);
       }
     }

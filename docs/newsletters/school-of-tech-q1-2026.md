@@ -70,12 +70,12 @@
   <div>
     <h3>Welcome to 2026</h3>
     <p>The issue opens with a welcome to new and returning learners, reflecting on the start of term and the pace of change across technology.</p>
-    <p>AI and professional ethics are a key theme, with learners encouraged to explore Digital Edge articles and TechSphere podcast episodes that connect apprenticeship learning to current industry questions.</p>
+    <p>AI and professional ethics are a key theme, with learners encouraged to explore Digital Edge articles and Tech Sphere Podcast episodes that connect apprenticeship learning to current industry questions.</p>
   </div>
   <div class="de-news-action-card">
     <h3>Explore next</h3>
     <label><input type="checkbox"> Read one Digital Edge article that connects to your role.</label>
-    <label><input type="checkbox"> Listen to a TechSphere episode featuring learners.</label>
+    <label><input type="checkbox"> Listen to a Tech Sphere Podcast episode featuring learners.</label>
     <label><input type="checkbox"> Pick one School of Tech event to attend this year.</label>
   </div>
 </div>
@@ -261,18 +261,18 @@
 
 <span id="digital-edge"></span>
 
-## The BPP Digital Edge and TechSphere
+## The BPP Digital Edge and Tech Sphere Podcast
 
 <div class="de-news-section">
   <div>
     <h3>Stay ahead in your industry</h3>
     <p>Digital Edge is BPP School of Technology's thought leadership space for technology, business, AI, data, and digital transformation.</p>
-    <p>The newsletter points learners towards Digital Edge articles and the TechSphere podcast as ways to connect apprenticeship learning with the skills shaping future careers.</p>
+    <p>The newsletter points learners towards Digital Edge articles and the Tech Sphere Podcast as ways to connect apprenticeship learning with the skills shaping future careers.</p>
   </div>
   <div class="de-news-action-card">
     <h3>Explore</h3>
     <p><a href="../../articles/">Read Digital Edge articles</a></p>
-    <p><a href="https://open.spotify.com/show/4wLAuGMARmMNMvqGnR9iQy">Listen to BPP Tech Sphere</a></p>
+    <p><a href="https://open.spotify.com/show/4wLAuGMARmMNMvqGnR9iQy">Listen to Tech Sphere Podcast</a></p>
   </div>
 </div>
 
@@ -289,7 +289,7 @@
   </article>
   <article>
     <span class="de-card__label">Podcast</span>
-    <h3>TechSphere Episodes</h3>
+    <h3>Tech Sphere Podcast Episodes</h3>
     <p>Recent and future episodes explore neurodiversity, software testing, AI, marketing, and digital practice.</p>
   </article>
 </div>

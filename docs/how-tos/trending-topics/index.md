@@ -20,11 +20,12 @@ Trending topics capture current industry developments that can be used in teachi
 ## Latest Topics
 
 <div class="de-card-grid">
-  <article class="de-card de-card--topic">
-    <h3><a class="de-card__title-link" href="data-ai-coding-agents-operational-risk/">AI Coding Agents and Operational Risk</a></h3>
+  <a class="de-card" href="data-ai-coding-agents-operational-risk/">
+    <span class="de-card__label">Data curriculum</span>
+    <h3>AI Coding Agents and Operational Risk</h3>
     <p>When automation goes wrong: a coding agent deleted a production database and backups, raising urgent questions about permissions, oversight, and AI governance.</p>
-    <small>May 2026 · Data curriculum</small>
-  </article>
+    <small>May 2026</small>
+  </a>
 </div>
 
 ## Future Topics

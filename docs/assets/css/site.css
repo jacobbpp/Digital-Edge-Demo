@@ -346,17 +346,6 @@ body.de-modal-open {
   color: var(--de-muted);
 }
 
-.de-card__title-link {
-  color: var(--de-ink);
-  text-decoration: none;
-}
-
-.de-card__title-link:hover,
-.de-card__title-link:focus {
-  color: var(--de-bpp-purple);
-  text-decoration: underline;
-}
-
 .de-topic-tags {
   display: flex;
   flex-wrap: wrap;
@@ -409,8 +398,7 @@ body.de-modal-open {
 }
 
 .de-topic-tags a:focus-visible,
-.de-article-card__meta a:focus-visible,
-.de-card__title-link:focus-visible {
+.de-article-card__meta a:focus-visible {
   outline: 3px solid rgba(98, 199, 194, 0.62);
   outline-offset: 2px;
 }

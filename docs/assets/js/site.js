@@ -73,7 +73,7 @@
 
     const searchIntro = document.querySelector("#mkdocs_search_modal .modal-body > p");
     if (searchIntro) {
-      searchIntro.textContent = "Search articles, guides, events, and newsletters.";
+      searchIntro.textContent = "Search articles, events, newsletters, and people.";
     }
 
     const footerText = document.querySelector("footer p");

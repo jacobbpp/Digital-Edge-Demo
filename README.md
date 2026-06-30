@@ -1,6 +1,6 @@
 # Digital Edge
 
-An MkDocs website for Digital Edge: articles, discovery guides, learning paths, events, newsletters, people profiles, and browser-based JavaScript guided practice.
+An MkDocs website for Digital Edge: articles, events, newsletters, people profiles, and podcast links.
 
 The published site is configured for GitHub Pages at `https://jacobbpp.github.io/Digital-Edge-Demo/`. For local development, use the local MkDocs config so the preview serves cleanly from `/`.
 
@@ -24,8 +24,9 @@ python3 -m mkdocs build
 ## Structure
 
 - `docs/` contains the website pages and assets.
+- `docs/how-tos/` contains guide source content that is currently hidden from the public build and can be re-enabled later.
 - `docs/assets/css/site.css` contains the custom Digital Edge styling.
 - `docs/assets/js/site.js` contains search polish, event modal behaviour, copy buttons, and guided JavaScript practice.
-- `hooks/search_filter.py` adjusts the built search index and opens Spotify links safely.
+- `hooks/search_filter.py` hides guide output from the public build, adjusts the built search index, and opens Spotify links safely.
 - `mkdocs.yml` is the published site configuration.
 - `mkdocs.local.yml` inherits the published config and overrides `site_url` for local preview.

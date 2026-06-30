@@ -149,10 +149,10 @@ The next gap is not simply whether people can use AI. It is whether they can des
       <h3>From Mythos to Fable</h3>
       <p>Why frontier AI moving into workflows makes governance and readiness more important.</p>
     </a>
-    <a class="de-card" href="../../how-tos/technology/technical-judgement/">
-      <span class="de-card__label">How To</span>
-      <h3>Technical Judgement</h3>
-      <p>Ask better questions before recommending a technical solution or automation.</p>
+    <a class="de-card" href="../chatgpt-ads-marketing-learning-apprentices/">
+      <span class="de-card__label">Marketing</span>
+      <h3>ChatGPT Ads</h3>
+      <p>What advertising inside AI answers means for marketing, learning, trust, and future apprentices.</p>
     </a>
   </div>
 </section>

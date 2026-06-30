@@ -1,28 +1,61 @@
 from __future__ import annotations
 
 import json
+import shutil
 from pathlib import Path
+from xml.etree import ElementTree
 
 
 EXCLUDED_LOCATIONS = {""}
+HIDDEN_LOCATION_PREFIXES = ("how-tos/",)
 SPOTIFY_URL = "https://open.spotify.com/show/4wLAuGMARmMNMvqGnR9iQy"
 
 
+def is_hidden_location(location: str) -> bool:
+    page_location = location.split("#", 1)[0]
+    return any(page_location.startswith(prefix) for prefix in HIDDEN_LOCATION_PREFIXES)
+
+
+def remove_hidden_sitemap_urls(site_dir: Path) -> None:
+    sitemap_path = site_dir / "sitemap.xml"
+    if not sitemap_path.exists():
+        return
+
+    tree = ElementTree.parse(sitemap_path)
+    root = tree.getroot()
+    namespace = root.tag.partition("}")[0].strip("{")
+    loc_tag = f"{{{namespace}}}loc" if namespace else "loc"
+
+    for url in list(root):
+        loc = url.find(loc_tag)
+        if loc is not None and loc.text and any(f"/{prefix}" in loc.text for prefix in HIDDEN_LOCATION_PREFIXES):
+            root.remove(url)
+
+    tree.write(sitemap_path, encoding="utf-8", xml_declaration=True)
+
+
 def on_post_build(config, **kwargs) -> None:
-    search_index_path = Path(config.site_dir) / "search" / "search_index.json"
+    site_dir = Path(config.site_dir)
+    search_index_path = site_dir / "search" / "search_index.json"
     if search_index_path.exists():
         search_index = json.loads(search_index_path.read_text(encoding="utf-8"))
         search_index["docs"] = [
             entry
             for entry in search_index.get("docs", [])
             if entry.get("location", "").split("#", 1)[0] not in EXCLUDED_LOCATIONS
+            and not is_hidden_location(entry.get("location", ""))
         ]
         search_index_path.write_text(
             json.dumps(search_index, sort_keys=True, separators=(",", ":")),
             encoding="utf-8",
         )
 
-    for html_path in Path(config.site_dir).rglob("*.html"):
+    remove_hidden_sitemap_urls(site_dir)
+
+    for prefix in HIDDEN_LOCATION_PREFIXES:
+        shutil.rmtree(site_dir / prefix.rstrip("/"), ignore_errors=True)
+
+    for html_path in site_dir.rglob("*.html"):
         html = html_path.read_text(encoding="utf-8")
 
         spotify_link = f'<a href="{SPOTIFY_URL}"'

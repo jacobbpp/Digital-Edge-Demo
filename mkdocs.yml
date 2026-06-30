@@ -1,5 +1,5 @@
 site_name: Digital Edge
-site_description: Practical digital skills articles, guides, learning paths, and guided coding practice.
+site_description: Practical digital skills articles, events, newsletters, people profiles, and podcast links.
 site_url: https://jacobbpp.github.io/Digital-Edge-Demo/
 
 theme:
@@ -18,7 +18,6 @@ hooks:
 nav:
   - Home: index.md
   - Articles: articles/index.md
-  - Guides: how-tos/index.md
   - Events: events.md
   - Newsletters: newsletters/index.md
   - People: people/index.md

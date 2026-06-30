@@ -251,10 +251,10 @@ The apprenticeship is designed to reflect the new reality of marketing. It combi
       <h3>Agentic Engineering</h3>
       <p>Why AI moving from advice into workflows changes what learners need to know.</p>
     </a>
-    <a class="de-card" href="../../how-tos/data-analytics/foundation/">
-      <span class="de-card__label">How To</span>
-      <h3>Data Basics</h3>
-      <p>Build confidence with data types, quality, simple charts, and insight writing.</p>
+    <a class="de-card" href="../from-mythos-to-fable/">
+      <span class="de-card__label">AI</span>
+      <h3>From Mythos to Fable</h3>
+      <p>Why frontier AI moving into workflows makes governance and readiness more important.</p>
     </a>
   </div>
 </section>

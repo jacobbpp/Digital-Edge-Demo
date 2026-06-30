@@ -171,10 +171,10 @@ The question is whether organisations have the people, skills and confidence to 
       <h3>Agentic Engineering</h3>
       <p>The next gap education needs to close as AI agents move into real workflows.</p>
     </a>
-    <a class="de-card" href="../../how-tos/technology/cloud-vs-on-prem/">
-      <span class="de-card__label">How To</span>
-      <h3>Cloud vs On-Prem</h3>
-      <p>Compare infrastructure choices and the responsibilities that come with them.</p>
+    <a class="de-card" href="../chatgpt-ads-marketing-learning-apprentices/">
+      <span class="de-card__label">Marketing</span>
+      <h3>ChatGPT Ads</h3>
+      <p>What advertising inside AI answers means for marketing, learning, trust, and future apprentices.</p>
     </a>
   </div>
 </section>

@@ -1,5 +1,5 @@
 site_name: Digital Edge
-site_description: Practical digital skills articles, events, newsletters, people profiles, and podcast links.
+site_description: Practical digital skills articles, events, community news, people profiles, and podcast links.
 site_url: https://jacobbpp.github.io/Digital-Edge-Demo/
 
 theme:
@@ -19,7 +19,7 @@ nav:
   - Home: index.md
   - Articles: articles/index.md
   - Events: events.md
-  - Newsletters: newsletters/index.md
+  - Community News: newsletters/index.md
   - People: people/index.md
   - Tech Sphere Podcast: https://open.spotify.com/show/4wLAuGMARmMNMvqGnR9iQy
 

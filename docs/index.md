@@ -1,8 +1,8 @@
 <section class="de-hero">
   <div class="de-hero__content">
     <p class="de-kicker">Digital skills, made practical</p>
-    <h1>Build your digital edge with articles, events, newsletters, and podcast conversations.</h1>
-    <p class="de-lede">Digital Edge brings together strategic thinking, event resources, newsletters, author perspectives, and practical examples for people who want to apply what they read.</p>
+    <h1>Build your digital edge with articles, events, community news, and podcast conversations.</h1>
+    <p class="de-lede">Digital Edge brings together strategic thinking, event resources, community updates, author perspectives, and practical examples for people who want to apply what they read.</p>
     <div class="de-actions">
       <a class="de-button de-button--primary" href="articles/">Read articles</a>
       <a class="de-button de-button--secondary" href="events/">View events</a>
@@ -13,7 +13,7 @@
     <h2>Explore beyond your main programme</h2>
     <ul>
       <li>Read an article for context and opinion</li>
-      <li>Open event resources and newsletters for wider learning</li>
+      <li>Open event resources and community news for wider learning</li>
       <li>Listen to podcast conversations on technology and practice</li>
     </ul>
   </div>
@@ -34,8 +34,8 @@
   </a>
   <a class="de-card" href="newsletters/">
     <span class="de-card__label">Browse</span>
-    <h3>Newsletters</h3>
-    <p>Interactive web editions of apprentice and School of Technology newsletter updates.</p>
+    <h3>Community News</h3>
+    <p>Updates from across the learner community, including newsletters, events, awards, careers, and support.</p>
   </a>
   <a class="de-card" href="https://open.spotify.com/show/4wLAuGMARmMNMvqGnR9iQy" target="_blank" rel="noopener noreferrer">
     <span class="de-card__label">Listen</span>
@@ -68,8 +68,8 @@
     <p>See upcoming masterclasses and completed Digital Edge events.</p>
   </a>
   <a href="newsletters/">
-    <span>Newsletters</span>
+    <span>Community</span>
     <strong>Apprentice and School Updates</strong>
-    <p>Browse web editions of newsletter issues and learner updates.</p>
+    <p>Browse community updates, newsletter editions, and learner news.</p>
   </a>
 </div>

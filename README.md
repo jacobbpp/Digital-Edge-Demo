@@ -1,6 +1,6 @@
 # Digital Edge
 
-An MkDocs website for Digital Edge: articles, events, newsletters, people profiles, and podcast links.
+An MkDocs website for Digital Edge: articles, events, community news, people profiles, and podcast links.
 
 The published site is configured for GitHub Pages at `https://jacobbpp.github.io/Digital-Edge-Demo/`. For local development, use the local MkDocs config so the preview serves cleanly from `/`.
 

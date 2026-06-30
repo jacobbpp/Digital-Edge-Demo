@@ -4,7 +4,7 @@
   <div>
     <p class="de-kicker">Faculty expertise</p>
     <h1>Meet the Technology faculty behind Digital Edge.</h1>
-    <p>Explore the people shaping articles, events, podcast conversations, newsletters, and practical learning resources across Digital Edge.</p>
+    <p>Explore the people shaping articles, events, podcast conversations, community news, and practical learning resources across Digital Edge.</p>
   </div>
   <aside>
     <span class="de-pill">Author profiles</span>

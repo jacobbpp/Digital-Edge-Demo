@@ -1,6 +1,6 @@
-# Newsletters
+# Community News
 
-Explore apprentice newsletters as interactive web editions. Each issue turns the original PDF into a cleaner, more engaging page with quick actions, expandable sections, reflection prompts, and support links.
+Explore community updates, learner news, newsletter editions, event highlights, careers information, awards, and support links. This section can hold different kinds of updates as Digital Edge grows.
 
 <div class="de-card-grid">
   <a class="de-card" href="may-2026/">

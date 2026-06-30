@@ -26,6 +26,6 @@ python3 -m mkdocs build
 - `docs/` contains the website pages and assets.
 - `docs/assets/css/site.css` contains the custom Digital Edge styling.
 - `docs/assets/js/site.js` contains search polish, event modal behaviour, copy buttons, and guided JavaScript practice.
-- `hooks/search_filter.py` adjusts the built search index, opens Spotify links safely, and injects Google Analytics only on the live GitHub Pages hostname.
+- `hooks/search_filter.py` adjusts the built search index and opens Spotify links safely.
 - `mkdocs.yml` is the published site configuration.
 - `mkdocs.local.yml` inherits the published config and overrides `site_url` for local preview.

@@ -78,14 +78,7 @@
 
     const footerText = document.querySelector("footer p");
     if (footerText) {
-      footerText.replaceChildren("BPP Digital Edge", " · ");
-      const privacyLink = document.createElement("a");
-      const siteBase = typeof base_url === "string" ? base_url : "";
-      privacyLink.href = typeof joinUrl === "function"
-        ? joinUrl(siteBase, "privacy/")
-        : `${siteBase.replace(/\/?$/, "/")}privacy/`;
-      privacyLink.textContent = "Privacy and analytics";
-      footerText.appendChild(privacyLink);
+      footerText.textContent = "BPP Digital Edge";
     }
 
     document.querySelectorAll('a[href^="https://open.spotify.com/"]').forEach((link) => {

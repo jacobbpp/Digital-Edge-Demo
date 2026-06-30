@@ -78,7 +78,14 @@
 
     const footerText = document.querySelector("footer p");
     if (footerText) {
-      footerText.textContent = "BPP Digital Edge";
+      footerText.replaceChildren("BPP Digital Edge", " · ");
+      const privacyLink = document.createElement("a");
+      const siteBase = typeof base_url === "string" ? base_url : "";
+      privacyLink.href = typeof joinUrl === "function"
+        ? joinUrl(siteBase, "privacy/")
+        : `${siteBase.replace(/\/?$/, "/")}privacy/`;
+      privacyLink.textContent = "Privacy and analytics";
+      footerText.appendChild(privacyLink);
     }
 
     document.querySelectorAll('a[href^="https://open.spotify.com/"]').forEach((link) => {
@@ -250,7 +257,24 @@
       location.textContent = card.dataset.eventLocation || "Online";
       description.textContent = card.dataset.eventDescription || "";
       audience.textContent = card.dataset.eventAudience || "Anyone interested in practical digital skills.";
-      register.href = card.dataset.eventRegister || "#";
+      const registrationUrl = card.dataset.eventRegister || "";
+      const eventStatus = (card.dataset.eventStatus || "").toLowerCase();
+
+      if (registrationUrl) {
+        register.href = registrationUrl;
+        register.target = "_blank";
+        register.rel = "noopener noreferrer";
+        register.textContent = "Register";
+        register.removeAttribute("aria-disabled");
+        register.classList.remove("de-event-modal__register--disabled");
+      } else {
+        register.removeAttribute("href");
+        register.removeAttribute("target");
+        register.removeAttribute("rel");
+        register.textContent = eventStatus === "complete" ? "Complete" : "Registration link coming soon";
+        register.setAttribute("aria-disabled", "true");
+        register.classList.add("de-event-modal__register--disabled");
+      }
 
       modal.setAttribute("aria-hidden", "false");
       document.body.classList.add("de-modal-open");

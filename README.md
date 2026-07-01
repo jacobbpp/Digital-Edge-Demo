@@ -30,3 +30,5 @@ python3 -m mkdocs build
 - `hooks/search_filter.py` hides guide output from the public build, adjusts the built search index, and opens Spotify links safely.
 - `mkdocs.yml` is the published site configuration.
 - `mkdocs.local.yml` inherits the published config and overrides `site_url` for local preview.
+
+The public site does not inject analytics or load third-party visual/CDN assets by default. External links, such as Spotify and source links in community news items, remain outbound links that visitors choose to open.

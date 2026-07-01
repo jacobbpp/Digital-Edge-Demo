@@ -154,7 +154,9 @@ body.de-modal-open {
   color: #ffffff;
   background:
     linear-gradient(120deg, rgba(5, 5, 5, 0.92), rgba(111, 45, 168, 0.76)),
-    url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=2400&q=95");
+    radial-gradient(circle at 78% 18%, rgba(98, 199, 194, 0.55), transparent 28%),
+    radial-gradient(circle at 18% 84%, rgba(244, 185, 66, 0.28), transparent 26%),
+    linear-gradient(135deg, #101820 0%, #35104f 48%, #057d7a 100%);
   background-position: center 42%;
   background-size: cover;
   border-radius: 8px;
@@ -1151,7 +1153,9 @@ body.de-modal-open {
   color: #ffffff;
   background:
     linear-gradient(120deg, rgba(5, 5, 5, 0.92), rgba(111, 45, 168, 0.72)),
-    url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=2200&q=92");
+    radial-gradient(circle at 82% 20%, rgba(230, 95, 69, 0.36), transparent 26%),
+    radial-gradient(circle at 16% 88%, rgba(98, 199, 194, 0.32), transparent 28%),
+    linear-gradient(135deg, #101820 0%, #35104f 58%, #2457a6 100%);
   background-position: center;
   background-size: cover;
   border-radius: 8px;
@@ -1638,7 +1642,9 @@ body.de-modal-open {
   color: #ffffff;
   background:
     linear-gradient(120deg, rgba(5, 5, 5, 0.92), rgba(111, 45, 168, 0.72)),
-    url("https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=2200&q=90");
+    radial-gradient(circle at 82% 18%, rgba(244, 185, 66, 0.32), transparent 26%),
+    radial-gradient(circle at 18% 86%, rgba(98, 199, 194, 0.34), transparent 28%),
+    linear-gradient(135deg, #101820 0%, #35104f 56%, #057d7a 100%);
   background-position: center;
   background-size: cover;
   border-radius: 8px;
@@ -1651,7 +1657,9 @@ body.de-modal-open {
   padding: 28px 32px;
   background:
     linear-gradient(120deg, rgba(5, 5, 5, 0.94), rgba(111, 45, 168, 0.82)),
-    url("https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=2200&q=90");
+    radial-gradient(circle at 84% 16%, rgba(244, 185, 66, 0.28), transparent 28%),
+    radial-gradient(circle at 16% 88%, rgba(98, 199, 194, 0.3), transparent 30%),
+    linear-gradient(135deg, #101820 0%, #35104f 58%, #057d7a 100%);
   background-position: center 42%;
 }
 
@@ -1860,7 +1868,9 @@ body.de-modal-open {
   color: #ffffff;
   background:
     linear-gradient(120deg, rgba(5, 5, 5, 0.9), rgba(111, 45, 168, 0.74)),
-    url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=2200&q=90");
+    radial-gradient(circle at 80% 18%, rgba(98, 199, 194, 0.36), transparent 27%),
+    radial-gradient(circle at 18% 86%, rgba(230, 95, 69, 0.28), transparent 25%),
+    linear-gradient(135deg, #101820 0%, #35104f 52%, #2457a6 100%);
   background-position: center;
   background-size: cover;
   border-radius: 8px;
@@ -1877,7 +1887,9 @@ body.de-modal-open {
   color: #ffffff;
   background:
     linear-gradient(120deg, rgba(5, 5, 5, 0.9), rgba(111, 45, 168, 0.68)),
-    url("https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=2200&q=90");
+    radial-gradient(circle at 82% 18%, rgba(244, 185, 66, 0.34), transparent 26%),
+    radial-gradient(circle at 18% 86%, rgba(98, 199, 194, 0.32), transparent 28%),
+    linear-gradient(135deg, #101820 0%, #35104f 54%, #057d7a 100%);
   background-position: center;
   background-size: cover;
   border-radius: 8px;

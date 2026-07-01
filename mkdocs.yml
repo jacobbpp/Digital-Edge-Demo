@@ -6,11 +6,7 @@ theme:
   name: mkdocs
   locale: en
   nav_style: primary
-  highlightjs: true
-  hljs_languages:
-    - python
-    - javascript
-    - css
+  highlightjs: false
 
 hooks:
   - hooks/search_filter.py
@@ -19,7 +15,7 @@ nav:
   - Home: index.md
   - Articles: articles/index.md
   - Events: events.md
-  - Community News: newsletters/index.md
+  - Community News: community-news/index.md
   - People: people/index.md
   - Tech Sphere Podcast: https://open.spotify.com/show/4wLAuGMARmMNMvqGnR9iQy
 

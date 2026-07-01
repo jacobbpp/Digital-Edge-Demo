@@ -32,7 +32,7 @@
     <h3>Events</h3>
     <p>Masterclasses and completed sessions on practical digital confidence, technology, and workplace change.</p>
   </a>
-  <a class="de-card" href="newsletters/">
+  <a class="de-card" href="community-news/">
     <span class="de-card__label">Browse</span>
     <h3>Community News</h3>
     <p>Updates from across the learner community, including newsletters, events, awards, careers, and support.</p>
@@ -67,7 +67,7 @@
     <strong>Live and Completed Sessions</strong>
     <p>See upcoming masterclasses and completed Digital Edge events.</p>
   </a>
-  <a href="newsletters/">
+  <a href="community-news/">
     <span>Community</span>
     <strong>Apprentice and School Updates</strong>
     <p>Browse community updates, newsletter editions, and learner news.</p>

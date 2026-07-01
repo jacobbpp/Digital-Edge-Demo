@@ -1969,17 +1969,39 @@ body.de-modal-open {
   line-height: 1.2;
 }
 
-.de-event-status {
+.de-event-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.de-event-status,
+.de-event-type {
   display: inline-flex;
   align-items: center;
   min-height: 28px;
-  margin-bottom: 14px;
   padding: 4px 10px;
   border-radius: 999px;
   font-size: 0.75rem;
   font-weight: 900;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+}
+
+.de-event-type--performance {
+  color: #5f4708;
+  background: #fff0c4;
+}
+
+.de-event-type--masterclass {
+  color: #0f4750;
+  background: #d7f0ed;
+}
+
+.de-event-type--debate {
+  color: #1c3d67;
+  background: #e5edf8;
 }
 
 .de-event-status--complete {
@@ -1992,7 +2014,7 @@ body.de-modal-open {
   background: rgba(98, 199, 194, 0.28);
 }
 
-.de-event-card span:not(.de-card__label):not(.de-event-status) {
+.de-event-card span:not(.de-card__label):not(.de-event-status):not(.de-event-type) {
   display: block;
   margin-bottom: 12px;
   color: var(--de-teal);

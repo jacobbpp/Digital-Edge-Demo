@@ -215,19 +215,21 @@
         </div>
         <div class="de-event-modal__body">
           <div class="de-event-modal__meta">
+            <div><span>Type</span><strong data-event-modal-type></strong></div>
             <div><span>Date</span><strong data-event-modal-date></strong></div>
             <div><span>Time</span><strong data-event-modal-time></strong></div>
             <div><span>Location</span><strong data-event-modal-location></strong></div>
           </div>
           <p data-event-modal-description></p>
           <p class="de-event-modal__audience"><strong>Best for: </strong><span data-event-modal-audience></span></p>
-          <a class="de-event-modal__register" href="#" target="_blank" rel="noopener noreferrer" data-event-modal-register>Register</a>
+          <a class="de-event-modal__register" href="#" target="_blank" rel="noopener noreferrer" data-event-modal-register>Register on the Hub</a>
         </div>
       </section>
     `;
     document.body.appendChild(modal);
 
     const title = modal.querySelector("#de-event-modal-title");
+    const type = modal.querySelector("[data-event-modal-type]");
     const date = modal.querySelector("[data-event-modal-date]");
     const time = modal.querySelector("[data-event-modal-time]");
     const location = modal.querySelector("[data-event-modal-location]");
@@ -245,6 +247,7 @@
     function openModal(card) {
       activeCard = card;
       title.textContent = card.dataset.eventTitle || "Event details";
+      type.textContent = card.dataset.eventType || "Digital Edge event";
       date.textContent = card.dataset.eventDate || "To be confirmed";
       time.textContent = card.dataset.eventTime || "To be confirmed";
       location.textContent = card.dataset.eventLocation || "Online";
@@ -257,14 +260,14 @@
         register.href = registrationUrl;
         register.target = "_blank";
         register.rel = "noopener noreferrer";
-        register.textContent = "Register";
+        register.textContent = "Register on the Hub";
         register.removeAttribute("aria-disabled");
         register.classList.remove("de-event-modal__register--disabled");
       } else {
         register.removeAttribute("href");
         register.removeAttribute("target");
         register.removeAttribute("rel");
-        register.textContent = eventStatus === "complete" ? "Complete" : "Registration link coming soon";
+        register.textContent = eventStatus === "complete" ? "Complete" : "Register on the Hub";
         register.setAttribute("aria-disabled", "true");
         register.classList.add("de-event-modal__register--disabled");
       }

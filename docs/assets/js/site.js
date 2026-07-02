@@ -221,8 +221,15 @@
             <div><span>Location</span><strong data-event-modal-location></strong></div>
           </div>
           <p data-event-modal-description></p>
+          <div class="de-event-modal__takeaways" hidden>
+            <strong>Key takeaways</strong>
+            <ul data-event-modal-takeaways></ul>
+          </div>
           <p class="de-event-modal__audience"><strong>Best for: </strong><span data-event-modal-audience></span></p>
-          <a class="de-event-modal__register" href="#" target="_blank" rel="noopener noreferrer" data-event-modal-register>Register on the Hub</a>
+          <div class="de-event-modal__actions">
+            <a class="de-event-modal__register" href="#" target="_blank" rel="noopener noreferrer" data-event-modal-register>Register on the Hub</a>
+            <a class="de-event-modal__calendar" href="#" download data-event-modal-calendar>Add to calendar</a>
+          </div>
         </div>
       </section>
     `;
@@ -235,12 +242,55 @@
     const location = modal.querySelector("[data-event-modal-location]");
     const description = modal.querySelector("[data-event-modal-description]");
     const audience = modal.querySelector("[data-event-modal-audience]");
+    const takeawayPanel = modal.querySelector(".de-event-modal__takeaways");
+    const takeaways = modal.querySelector("[data-event-modal-takeaways]");
     const register = modal.querySelector("[data-event-modal-register]");
+    const calendar = modal.querySelector("[data-event-modal-calendar]");
     let activeCard = null;
+    let activeCalendarUrl = "";
+
+    function formatIcsDate(value) {
+      return new Date(value).toISOString().replace(/[-:]/g, "").replace(/\.\d{3}Z$/, "Z");
+    }
+
+    function escapeIcsText(value) {
+      return (value || "")
+        .replace(/\\/g, "\\\\")
+        .replace(/\n/g, "\\n")
+        .replace(/,/g, "\\,")
+        .replace(/;/g, "\\;");
+    }
+
+    function buildCalendarUrl(card) {
+      if (!card.dataset.eventStart || !card.dataset.eventEnd) return "";
+
+      const uid = `${card.dataset.eventStart}-${card.dataset.eventTitle || "digital-edge-event"}`.replace(/[^a-z0-9]+/gi, "-").toLowerCase();
+      const content = [
+        "BEGIN:VCALENDAR",
+        "VERSION:2.0",
+        "PRODID:-//BPP Digital Edge//Events//EN",
+        "BEGIN:VEVENT",
+        `UID:${uid}@digital-edge`,
+        `DTSTAMP:${formatIcsDate(new Date().toISOString())}`,
+        `DTSTART:${formatIcsDate(card.dataset.eventStart)}`,
+        `DTEND:${formatIcsDate(card.dataset.eventEnd)}`,
+        `SUMMARY:${escapeIcsText(card.dataset.eventTitle || "Digital Edge event")}`,
+        `DESCRIPTION:${escapeIcsText(card.dataset.eventDescription || "Digital Edge event")}`,
+        `LOCATION:${escapeIcsText(card.dataset.eventLocation || "Online")}`,
+        "END:VEVENT",
+        "END:VCALENDAR"
+      ].join("\r\n");
+
+      return URL.createObjectURL(new Blob([content], { type: "text/calendar;charset=utf-8" }));
+    }
 
     function closeModal() {
       modal.setAttribute("aria-hidden", "true");
       document.body.classList.remove("de-modal-open");
+      if (activeCalendarUrl) {
+        URL.revokeObjectURL(activeCalendarUrl);
+        activeCalendarUrl = "";
+      }
       if (activeCard) activeCard.focus();
     }
 
@@ -253,6 +303,14 @@
       location.textContent = card.dataset.eventLocation || "Online";
       description.textContent = card.dataset.eventDescription || "";
       audience.textContent = card.dataset.eventAudience || "Anyone interested in practical digital skills.";
+      takeaways.replaceChildren();
+      const takeawayItems = (card.dataset.eventTakeaways || "").split("|").map((item) => item.trim()).filter(Boolean);
+      takeawayPanel.hidden = !takeawayItems.length;
+      takeawayItems.forEach((item) => {
+        const listItem = document.createElement("li");
+        listItem.textContent = item;
+        takeaways.appendChild(listItem);
+      });
       const registrationUrl = card.dataset.eventRegister || "";
       const eventStatus = (card.dataset.eventStatus || "").toLowerCase();
 
@@ -272,6 +330,17 @@
         register.classList.add("de-event-modal__register--disabled");
       }
 
+      if (activeCalendarUrl) URL.revokeObjectURL(activeCalendarUrl);
+      activeCalendarUrl = eventStatus === "upcoming" ? buildCalendarUrl(card) : "";
+      if (activeCalendarUrl) {
+        calendar.href = activeCalendarUrl;
+        calendar.download = `${(card.dataset.eventTitle || "digital-edge-event").replace(/[^a-z0-9]+/gi, "-").toLowerCase()}.ics`;
+        calendar.hidden = false;
+      } else {
+        calendar.removeAttribute("href");
+        calendar.hidden = true;
+      }
+
       modal.setAttribute("aria-hidden", "false");
       document.body.classList.add("de-modal-open");
       modal.querySelector(".de-event-modal__close").focus();
@@ -289,6 +358,27 @@
       if (event.key === "Escape" && modal.getAttribute("aria-hidden") === "false") {
         closeModal();
       }
+    });
+  }
+
+  function installEventFilters() {
+    const filterButtons = Array.from(document.querySelectorAll("[data-event-filter]"));
+    const cards = Array.from(document.querySelectorAll("[data-event-filter-key]"));
+    if (!filterButtons.length || !cards.length) return;
+
+    function setFilter(filterKey) {
+      const activeFilter = filterKey || "all";
+      filterButtons.forEach((button) => {
+        button.setAttribute("aria-pressed", String(button.dataset.eventFilter === activeFilter));
+      });
+
+      cards.forEach((card) => {
+        card.hidden = activeFilter !== "all" && card.dataset.eventFilterKey !== activeFilter;
+      });
+    }
+
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", () => setFilter(button.dataset.eventFilter));
     });
   }
 
@@ -360,11 +450,13 @@
     document.addEventListener("DOMContentLoaded", installCodeCopyButtons);
     document.addEventListener("DOMContentLoaded", installInlineGuidedPractice);
     document.addEventListener("DOMContentLoaded", installEventCards);
+    document.addEventListener("DOMContentLoaded", installEventFilters);
     document.addEventListener("DOMContentLoaded", installArticleTagFilters);
   } else {
     installCodeCopyButtons();
     installInlineGuidedPractice();
     installEventCards();
+    installEventFilters();
     installArticleTagFilters();
   }
 

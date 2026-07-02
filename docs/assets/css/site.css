@@ -1926,35 +1926,25 @@ body.de-modal-open {
 }
 
 .de-podcast-identity {
+  align-self: center;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
+  gap: 10px;
   padding: 22px;
   color: var(--de-ink);
   background: rgba(255, 255, 255, 0.94);
   border-radius: 8px;
 }
 
-.de-podcast-identity span {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 74px;
-  height: 74px;
-  margin-bottom: 18px;
-  color: #ffffff;
-  background: var(--de-teal);
-  border-radius: 8px;
-  font-size: 1.4rem;
-  font-weight: 900;
-}
-
 .de-podcast-identity strong {
   display: block;
+  margin: 0;
   font-size: 1.15rem;
 }
 
 .de-podcast-identity p {
+  margin: 0;
   color: var(--de-muted);
 }
 

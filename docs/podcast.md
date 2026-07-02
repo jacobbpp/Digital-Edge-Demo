@@ -10,7 +10,6 @@
     </div>
   </div>
   <aside class="de-podcast-identity" aria-label="Tech Sphere podcast summary">
-    <span>TS</span>
     <strong>38 episodes on Spotify</strong>
     <p>Latest public episodes are shown below. Spotify holds the full archive and playback experience.</p>
   </aside>

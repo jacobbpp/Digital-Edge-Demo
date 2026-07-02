@@ -1,7 +1,7 @@
 <section class="de-hero">
   <div class="de-hero__content">
     <p class="de-kicker">Digital skills, made practical</p>
-    <h1>Build your digital edge with articles, events, community news, and podcast conversations.</h1>
+    <h1>Giving you the Digital Edge with articles, events, community news and podcasts.</h1>
     <p class="de-lede">Digital Edge brings together strategic thinking, event resources, community updates, author perspectives, and practical examples for people who want to apply what they read.</p>
     <div class="de-actions">
       <a class="de-button de-button--primary" href="articles/">Read articles</a>
@@ -30,7 +30,7 @@
   <a class="de-card" href="events/">
     <span class="de-card__label">Attend</span>
     <h3>Events</h3>
-    <p>Masterclasses and completed sessions on practical digital confidence, technology, and workplace change.</p>
+    <p>Masterclasses and past sessions on practical digital confidence, technology, and workplace change.</p>
   </a>
   <a class="de-card" href="community-news/">
     <span class="de-card__label">Browse</span>
@@ -64,8 +64,8 @@
   </a>
   <a href="events/">
     <span>Events</span>
-    <strong>Live and Completed Sessions</strong>
-    <p>See upcoming masterclasses and completed Digital Edge events.</p>
+    <strong>Upcoming and Past Sessions</strong>
+    <p>See upcoming masterclasses and past Digital Edge events.</p>
   </a>
   <a href="community-news/">
     <span>Community</span>

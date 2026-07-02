@@ -1878,10 +1878,6 @@ body.de-modal-open {
 }
 
 .de-events-hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
-  gap: 24px;
-  align-items: stretch;
   margin: 28px 0 32px;
   padding: 38px;
   color: #ffffff;
@@ -1909,16 +1905,22 @@ body.de-modal-open {
   font-size: 1.08rem;
 }
 
-.de-events-hero aside {
-  align-self: end;
-  padding: 22px;
-  color: var(--de-ink);
-  background: rgba(255, 255, 255, 0.94);
-  border-radius: 8px;
+.de-event-section {
+  margin: 30px 0 42px;
 }
 
-.de-events-hero aside p {
-  color: var(--de-muted);
+.de-event-section__header {
+  margin-bottom: 14px;
+}
+
+.de-event-section__header .de-kicker {
+  color: var(--de-teal);
+}
+
+.de-event-section__header h2 {
+  margin: 0;
+  font-size: clamp(1.65rem, 3vw, 2.35rem);
+  line-height: 1.1;
 }
 
 .de-event-grid {
@@ -1944,7 +1946,7 @@ body.de-modal-open {
   transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
 }
 
-.de-event-card--complete {
+.de-event-card--past {
   background: #f8fafc;
 }
 
@@ -2004,7 +2006,7 @@ body.de-modal-open {
   background: #e5edf8;
 }
 
-.de-event-status--complete {
+.de-event-status--past {
   color: #17212b;
   background: #dde5ec;
 }

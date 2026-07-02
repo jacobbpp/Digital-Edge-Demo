@@ -267,7 +267,7 @@
         register.removeAttribute("href");
         register.removeAttribute("target");
         register.removeAttribute("rel");
-        register.textContent = eventStatus === "complete" ? "Complete" : "Register on the Hub";
+        register.textContent = eventStatus === "past" ? "Past" : "Register on the Hub";
         register.setAttribute("aria-disabled", "true");
         register.classList.add("de-event-modal__register--disabled");
       }

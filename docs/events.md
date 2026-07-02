@@ -3,16 +3,17 @@
 <section class="de-events-hero">
   <div>
     <p class="de-kicker">Events</p>
-    <h1>Live and completed sessions for building practical digital confidence.</h1>
-    <p>Explore focused masterclasses, debates, and performance sessions that help learners build confidence, workplace skills, and practical digital awareness.</p>
+    <h1>What's coming up in masterclasses, events and debates.</h1>
   </div>
-  <aside>
-    <span class="de-pill">Event status</span>
-    <p>Upcoming sessions show what is next. Completed sessions stay visible so learners can see what has already taken place.</p>
-  </aside>
 </section>
 
-<div class="de-event-grid" aria-label="Digital Edge events">
+<section class="de-event-section" aria-labelledby="upcoming-events">
+  <div class="de-event-section__header">
+    <p class="de-kicker">Upcoming</p>
+    <h2 id="upcoming-events">Upcoming Events</h2>
+  </div>
+
+<div class="de-event-grid" aria-label="Upcoming Digital Edge events">
   <button
     class="de-event-card"
     type="button"
@@ -265,3 +266,34 @@
     <p>Masterclass on AI's rise, its risks, and the opportunities for professionals.</p>
   </button>
 </div>
+</section>
+
+<section class="de-event-section" aria-labelledby="past-events">
+  <div class="de-event-section__header">
+    <p class="de-kicker">Past</p>
+    <h2 id="past-events">Past Events</h2>
+  </div>
+
+<div class="de-event-grid" aria-label="Past Digital Edge events">
+  <button
+    class="de-event-card de-event-card--past"
+    type="button"
+    data-event-title="Post-Quantum World: Is Your Cybersecurity Ready"
+    data-event-type="Masterclass"
+    data-event-status="Past"
+    data-event-date="Friday 26 June 2026"
+    data-event-time="12:00-13:00"
+    data-event-location="Online"
+    data-event-description="Quantum computers could break today's encryption. This past session explored what post-quantum cryptography looks like and what leaders should know about securing the future."
+    data-event-audience="Learners and apprentices who want to discover a new topic, build confidence, or dive deeper into an area they already love."
+  >
+    <div class="de-event-tags">
+      <span class="de-event-type de-event-type--masterclass">Masterclass</span>
+      <span class="de-event-status de-event-status--past">Past</span>
+    </div>
+    <strong>Post-Quantum World: Is Your Cybersecurity Ready</strong>
+    <span>Friday 26 June 2026 · 12:00-13:00</span>
+    <p>What post-quantum cryptography means for leaders preparing to secure the future.</p>
+  </button>
+</div>
+</section>

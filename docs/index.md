@@ -37,7 +37,7 @@
     <h3>Community News</h3>
     <p>Updates from across the learner community, including newsletters, events, awards, careers, and support.</p>
   </a>
-  <a class="de-card" href="https://open.spotify.com/show/4wLAuGMARmMNMvqGnR9iQy" target="_blank" rel="noopener noreferrer">
+  <a class="de-card" href="podcast/">
     <span class="de-card__label">Listen</span>
     <h3>Tech Sphere Podcast</h3>
     <p>The Digital Edge podcast space for technology, learning, AI, software, and digital practice.</p>

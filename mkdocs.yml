@@ -17,7 +17,7 @@ nav:
   - Events: events.md
   - Community News: community-news/index.md
   - People: people/index.md
-  - Tech Sphere Podcast: https://open.spotify.com/show/4wLAuGMARmMNMvqGnR9iQy
+  - Tech Sphere Podcast: podcast.md
 
 extra_css:
   - assets/css/site.css

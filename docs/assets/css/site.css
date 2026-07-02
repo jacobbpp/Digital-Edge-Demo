@@ -1854,7 +1854,8 @@ body.de-modal-open {
 .de-people-hero .de-kicker,
 .de-profile-hero .de-kicker,
 .de-news-hero .de-kicker,
-.de-events-hero .de-kicker {
+.de-events-hero .de-kicker,
+.de-podcast-hero .de-kicker {
   color: #ffffff;
 }
 
@@ -1890,6 +1891,115 @@ body.de-modal-open {
   background-size: cover;
   border-radius: 8px;
   box-shadow: 0 22px 58px rgba(23, 33, 43, 0.12);
+}
+
+.de-podcast-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(260px, 0.75fr);
+  gap: 24px;
+  align-items: stretch;
+  margin: 28px 0 32px;
+  padding: 38px;
+  color: #ffffff;
+  background:
+    linear-gradient(120deg, rgba(5, 5, 5, 0.9), rgba(5, 125, 122, 0.7)),
+    radial-gradient(circle at 82% 18%, rgba(244, 185, 66, 0.28), transparent 26%),
+    radial-gradient(circle at 18% 86%, rgba(111, 45, 168, 0.34), transparent 28%),
+    linear-gradient(135deg, #101820 0%, #057d7a 48%, #35104f 100%);
+  background-position: center;
+  background-size: cover;
+  border-radius: 8px;
+  box-shadow: 0 22px 58px rgba(23, 33, 43, 0.12);
+}
+
+.de-podcast-hero h1 {
+  max-width: 860px;
+  margin: 0;
+  font-size: clamp(2.15rem, 4.8vw, 4.2rem);
+  line-height: 1.03;
+}
+
+.de-podcast-hero p {
+  max-width: 760px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.08rem;
+}
+
+.de-podcast-identity {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 22px;
+  color: var(--de-ink);
+  background: rgba(255, 255, 255, 0.94);
+  border-radius: 8px;
+}
+
+.de-podcast-identity span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 74px;
+  height: 74px;
+  margin-bottom: 18px;
+  color: #ffffff;
+  background: var(--de-teal);
+  border-radius: 8px;
+  font-size: 1.4rem;
+  font-weight: 900;
+}
+
+.de-podcast-identity strong {
+  display: block;
+  font-size: 1.15rem;
+}
+
+.de-podcast-identity p {
+  color: var(--de-muted);
+}
+
+.de-podcast-section {
+  margin: 30px 0 42px;
+}
+
+.de-podcast-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 22px 0 38px;
+}
+
+.de-podcast-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 300px;
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid var(--de-line);
+  border-radius: 8px;
+  box-shadow: 0 10px 24px rgba(23, 33, 43, 0.05);
+}
+
+.de-podcast-card h3 {
+  margin: 8px 0 10px;
+  font-size: 1.2rem;
+  line-height: 1.2;
+}
+
+.de-podcast-card p {
+  color: var(--de-muted);
+}
+
+.de-podcast-card a {
+  margin-top: auto;
+  color: var(--de-teal);
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.de-podcast-card a:hover,
+.de-podcast-card a:focus {
+  text-decoration: underline;
 }
 
 .de-events-hero h1 {
@@ -2886,11 +2996,14 @@ footer hr {
   .de-content-type-guide,
 	  .de-news-hero,
 	  .de-events-hero,
+  .de-podcast-hero,
 	  .de-news-stats,
 	  .de-news-feature-grid,
   .de-support-grid,
   .de-news-section,
   .de-event-grid,
+  .de-event-archive ul,
+  .de-podcast-grid,
   .de-role-route-grid,
   .de-before-after,
   .de-process-steps,
@@ -2912,7 +3025,8 @@ footer hr {
 
 	  .de-article-index-hero,
 	  .de-article-hero,
-	  .de-events-hero {
+	  .de-events-hero,
+  .de-podcast-hero {
 	    padding: 30px;
 	  }
 
@@ -2928,7 +3042,8 @@ footer hr {
 	  .de-article-hero,
   .de-people-hero,
   .de-profile-hero,
-	  .de-events-hero {
+	  .de-events-hero,
+  .de-podcast-hero {
 	    margin-top: 14px;
 	    padding: 22px;
 	  }

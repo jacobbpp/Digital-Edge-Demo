@@ -48,8 +48,3 @@
   </article>
 
 </div>
-
-<section class="de-people-note">
-  <h2>Adding more people later</h2>
-  <p>Each profile card links to an author page. New faculty members can be added by duplicating a card and creating a matching profile page.</p>
-</section>

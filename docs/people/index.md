@@ -47,4 +47,21 @@
     <a class="de-person-card__cta" href="david-green/">View profile</a>
   </article>
 
+  <article class="de-person-card">
+    <div class="de-person-card__header">
+      <span class="de-person-card__initials" aria-hidden="true">ML</span>
+      <div>
+        <a class="de-person-card__name" href="matt-lucas/">Matt Lucas</a>
+        <p class="de-person-card__role">Associate Professor of Technology, BPP University</p>
+      </div>
+    </div>
+    <p>AI and machine learning programmes, organisational AI adoption, teaching, learning, skills, and ethical technology adoption.</p>
+    <div class="de-person-card__topics" aria-label="Matt Lucas subject areas">
+      <span>AI adoption</span>
+      <span>Machine learning</span>
+      <span>IT skills</span>
+    </div>
+    <a class="de-person-card__cta" href="matt-lucas/">View profile</a>
+  </article>
+
 </div>

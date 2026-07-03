@@ -2,7 +2,7 @@
   <div class="de-hero__content">
     <p class="de-kicker">Digital skills, made practical</p>
     <h1>Giving you the Digital Edge with articles, events, community news and podcasts.</h1>
-    <p class="de-lede">Digital Edge brings together strategic thinking, event resources, community updates, author perspectives, and practical examples for people who want to apply what they read.</p>
+    <p class="de-lede">Digital Edge brings together strategic thinking, event resources, community updates, podcast conversations, and practical examples for people who want to apply what they read.</p>
     <div class="de-actions">
       <a class="de-button de-button--primary" href="articles/">Read articles</a>
       <a class="de-button de-button--secondary" href="events/">View events</a>
@@ -41,11 +41,6 @@
     <span class="de-card__label">Listen</span>
     <h3>Tech Sphere Podcast</h3>
     <p>The Digital Edge podcast space for technology, learning, AI, software, and digital practice.</p>
-  </a>
-  <a class="de-card" href="people/">
-    <span class="de-card__label">Meet</span>
-    <h3>People</h3>
-    <p>Faculty expertise, author profiles, and links to the Digital Edge articles written by the technology team.</p>
   </a>
 </div>
 

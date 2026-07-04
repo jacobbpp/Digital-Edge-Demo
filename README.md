@@ -1,4 +1,4 @@
-# Digital Edge
+# Digital Edge Demo
 
 An MkDocs website for Digital Edge: articles, events, community news, people profiles, and podcast links.
 

@@ -1,3 +1,15 @@
+---
+title: "ChatGPT Ads: What This Means for Marketing, Learning, and the Next Generation of Apprentices"
+description: "AI answers are becoming places where influence happens, changing how brands are discovered, how learners make decisions, and how marketers earn trust."
+author: "David Green"
+date: "2026-06-05"
+updated: "2026-06-05"
+tags:
+  - Marketing
+  - AI
+type: article
+---
+
 # ChatGPT Ads: What This Means for Marketing, Learning, and the Next Generation of Apprentices
 
 <section class="de-article-hero">

@@ -2,13 +2,86 @@ from __future__ import annotations
 
 import json
 import shutil
+from html import escape
 from pathlib import Path
+from urllib.parse import urljoin
 from xml.etree import ElementTree
 
 
 EXCLUDED_LOCATIONS = {""}
 HIDDEN_LOCATION_PREFIXES = ("how-tos/",)
 SPOTIFY_URL = "https://open.spotify.com/show/4wLAuGMARmMNMvqGnR9iQy"
+
+
+def first_meta_value(value) -> str:
+    if isinstance(value, list):
+        return str(value[0]) if value else ""
+    return str(value or "")
+
+
+def meta_values(value) -> list[str]:
+    if isinstance(value, list):
+        values = value
+    elif value:
+        values = [value]
+    else:
+        values = []
+
+    expanded: list[str] = []
+    for item in values:
+        if isinstance(item, str) and "," in item:
+            expanded.extend(part.strip() for part in item.split(","))
+        else:
+            expanded.append(str(item).strip())
+
+    return [item for item in expanded if item]
+
+
+def meta_tag(name: str, content: str) -> str:
+    return f'<meta name="{escape(name, quote=True)}" content="{escape(content, quote=True)}">'
+
+
+def property_tag(name: str, content: str) -> str:
+    return f'<meta property="{escape(name, quote=True)}" content="{escape(content, quote=True)}">'
+
+
+def build_social_meta(page, config) -> str:
+    meta = getattr(page, "meta", {}) or {}
+    description = first_meta_value(meta.get("description"))
+    if not description:
+        return ""
+
+    title = first_meta_value(meta.get("title")) or page.title or config.site_name
+    author = first_meta_value(meta.get("author"))
+    published = first_meta_value(meta.get("date") or meta.get("published"))
+    updated = first_meta_value(meta.get("updated") or meta.get("modified"))
+    image = first_meta_value(meta.get("image") or meta.get("social_image"))
+    page_type = first_meta_value(meta.get("type")) or ("article" if author or published else "website")
+    canonical_url = urljoin(config.site_url or "", page.url)
+
+    tags = [
+        meta_tag("description", description),
+        property_tag("og:title", title),
+        property_tag("og:description", description),
+        property_tag("og:type", page_type),
+        property_tag("og:url", canonical_url),
+        property_tag("og:site_name", config.site_name),
+    ]
+
+    if author:
+        tags.append(meta_tag("author", author))
+        tags.append(property_tag("article:author", author))
+    if published:
+        tags.append(property_tag("article:published_time", published))
+    if updated:
+        tags.append(property_tag("article:modified_time", updated))
+    for tag in meta_values(meta.get("tags")):
+        tags.append(property_tag("article:tag", tag))
+    if image:
+        absolute_image = urljoin(canonical_url, image)
+        tags.append(property_tag("og:image", absolute_image))
+
+    return "\n".join(tags)
 
 
 def is_hidden_location(location: str) -> bool:
@@ -32,6 +105,13 @@ def remove_hidden_sitemap_urls(site_dir: Path) -> None:
             root.remove(url)
 
     tree.write(sitemap_path, encoding="utf-8", xml_declaration=True)
+
+
+def on_post_page(output: str, page, config, **kwargs) -> str:
+    social_meta = build_social_meta(page, config)
+    if social_meta and "</head>" in output:
+        return output.replace("</head>", f"{social_meta}\n</head>", 1)
+    return output
 
 
 def on_post_build(config, **kwargs) -> None:

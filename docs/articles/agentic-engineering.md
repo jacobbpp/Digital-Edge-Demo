@@ -1,3 +1,15 @@
+---
+title: "Agentic Engineering: The Next Gap Education Needs to Close"
+description: "AI agents are moving from helpful sidekick to active participant in business workflows, making process design, permissions, governance, and professional judgement part of the learning agenda."
+author: "Jacob Reilly-Cooper"
+date: "2026-05-21"
+updated: "2026-05-21"
+tags:
+  - AI
+  - Workflows
+type: article
+---
+
 # Agentic Engineering: The Next Gap Education Needs to Close
 
 <section class="de-article-hero">

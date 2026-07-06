@@ -1,3 +1,15 @@
+---
+title: "Mythos to Fable: The Warning Light Just Entered the Workflow"
+description: "Frontier AI is becoming more capable, more accessible, and more deeply connected to everyday work. The lesson is not panic; it is readiness."
+author: "Jacob Reilly-Cooper"
+date: "2026-06-15"
+updated: "2026-06-15"
+tags:
+  - AI
+  - Adoption
+type: article
+---
+
 # Mythos to Fable: The Warning Light Just Entered the Workflow
 
 <section class="de-article-hero">

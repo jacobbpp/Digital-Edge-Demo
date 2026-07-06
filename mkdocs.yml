@@ -11,6 +11,9 @@ theme:
 hooks:
   - hooks/search_filter.py
 
+markdown_extensions:
+  - meta
+
 nav:
   - Home: index.md
   - Articles: articles/index.md

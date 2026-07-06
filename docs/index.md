@@ -44,7 +44,7 @@
   </a>
 </div>
 
-## Latest From Digital Edge
+## Featured From Digital Edge
 
 <div class="de-feature-list">
   <a href="articles/from-mythos-to-fable/">
@@ -52,15 +52,17 @@
     <strong>From Mythos to Fable</strong>
     <p>A practical warning light for organisations bringing frontier AI into everyday work.</p>
   </a>
-  <a href="articles/agentic-engineering/">
-    <span>Article</span>
-    <strong>Agentic Engineering</strong>
-    <p>The next gap education needs to close as AI agents move from advice into real workflows.</p>
-  </a>
+  <!-- de-feature-event:start -->
   <a href="events/">
-    <span>Events</span>
-    <strong>Upcoming and Past Sessions</strong>
-    <p>See upcoming masterclasses and past Digital Edge events.</p>
+    <span>Event</span>
+    <strong>Imposter Syndrome and Building Confidence</strong>
+    <p>Upcoming Performance &amp; Impact session on confidence, growth, and recognising imposter syndrome.</p>
+  </a>
+  <!-- de-feature-event:end -->
+  <a href="podcast/">
+    <span>Podcast</span>
+    <strong>Game Changers: AI vs Tradition in Football</strong>
+    <p>AI, data, digital marketing, and technology through the lens of football and global sport.</p>
   </a>
   <a href="community-news/">
     <span>Community</span>

@@ -73,7 +73,7 @@
 
     const searchIntro = document.querySelector("#mkdocs_search_modal .modal-body > p");
     if (searchIntro) {
-      searchIntro.textContent = "Search articles, events, community news, and people.";
+      searchIntro.textContent = "Search articles, events, community news, podcast episodes, and people.";
     }
 
     const footerText = document.querySelector("footer p");
@@ -227,7 +227,7 @@
           </div>
           <p class="de-event-modal__audience"><strong>Best for: </strong><span data-event-modal-audience></span></p>
           <div class="de-event-modal__actions">
-            <a class="de-event-modal__register" href="#" target="_blank" rel="noopener noreferrer" data-event-modal-register>Register on the Hub</a>
+            <a class="de-event-modal__register" href="#" target="_blank" rel="noopener noreferrer" data-event-modal-register>Register via Hub, eLMS, or OneFile</a>
             <a class="de-event-modal__calendar" href="#" download data-event-modal-calendar>Add to calendar</a>
           </div>
         </div>
@@ -318,14 +318,14 @@
         register.href = registrationUrl;
         register.target = "_blank";
         register.rel = "noopener noreferrer";
-        register.textContent = "Register on the Hub";
+        register.textContent = "Register via Hub, eLMS, or OneFile";
         register.removeAttribute("aria-disabled");
         register.classList.remove("de-event-modal__register--disabled");
       } else {
         register.removeAttribute("href");
         register.removeAttribute("target");
         register.removeAttribute("rel");
-        register.textContent = eventStatus === "past" ? "Past" : "Register on the Hub";
+        register.textContent = eventStatus === "past" ? "Past" : "Register via Hub, eLMS, or OneFile";
         register.setAttribute("aria-disabled", "true");
         register.classList.add("de-event-modal__register--disabled");
       }

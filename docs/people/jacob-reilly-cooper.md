@@ -14,9 +14,17 @@
 <div class="de-subject-tags" aria-label="Subject areas">
   <span>AI adoption</span>
   <span>Agentic engineering</span>
+  <span>Software</span>
+  <span>Technology</span>
   <span>Curriculum strategy</span>
   <span>Technical judgement</span>
 </div>
+
+## Biography
+
+Jacob Reilly-Cooper is Head of Technology Learning, with over a decade of experience across software, education, and digital transformation. He specialises in making complex technology practical, accessible, and useful for learners, teams, and organisations.
+
+His work focuses on helping people build confidence with emerging technologies, from software development to AI and automation. He is passionate about creating learning experiences that are relevant, engaging, and directly connected to the modern workplace.
 
 ## Digital Edge Articles
 

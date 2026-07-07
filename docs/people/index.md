@@ -64,4 +64,21 @@
     <a class="de-person-card__cta" href="matt-lucas/">View profile</a>
   </article>
 
+  <article class="de-person-card">
+    <div class="de-person-card__header">
+      <span class="de-person-card__initials" aria-hidden="true">IF</span>
+      <div>
+        <a class="de-person-card__name" href="idris-fabiyi/">Idris Fabiyi</a>
+        <p class="de-person-card__role">Head of Innovation and Technology</p>
+      </div>
+    </div>
+    <p>Technology, data, and AI, translating the edge of AI and software engineering into actionable insights.</p>
+    <div class="de-person-card__topics" aria-label="Idris Fabiyi subject areas">
+      <span>Technology</span>
+      <span>Data and AI</span>
+      <span>Software engineering</span>
+    </div>
+    <a class="de-person-card__cta" href="idris-fabiyi/">View profile</a>
+  </article>
+
 </div>

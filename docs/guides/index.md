@@ -2,6 +2,23 @@
 
 This is the Digital Edge discovery area for optional guides that build digital confidence. These pages sit alongside formal course content so learners can explore one practical topic at a time.
 
+## AI
+
+Practical guidance for using AI tools clearly, critically, and safely in everyday work.
+
+<div class="de-card-grid de-card-grid--guide-section">
+  <a class="de-card" href="strong-and-weak-ai-prompting/">
+    <span class="de-card__label">AI</span>
+    <h3>Strong and Weak AI Prompting</h3>
+    <p>Write clearer AI prompts by giving context, setting expectations, asking for useful formats, and checking the output critically.</p>
+  </a>
+  <a class="de-card" href="checking-ai-outputs/">
+    <span class="de-card__label">AI</span>
+    <h3>Checking AI Outputs</h3>
+    <p>Review AI-generated answers for accuracy, missing context, tone, bias, sources, and safe use before relying on them.</p>
+  </a>
+</div>
+
 ## Delivery
 
 Understand how technical work is planned, sequenced, reviewed, and adapted as priorities change.
@@ -11,6 +28,11 @@ Understand how technical work is planned, sequenced, reviewed, and adapted as pr
     <span class="de-card__label">Delivery</span>
     <h3>Agile and Waterfall</h3>
     <p>Understand two common delivery approaches and when each style of planning makes sense.</p>
+  </a>
+  <a class="de-card" href="estimating-technical-work/">
+    <span class="de-card__label">Delivery</span>
+    <h3>Estimating Technical Work</h3>
+    <p>Break work into sensible parts, make uncertainty visible, and explain estimates with confidence.</p>
   </a>
 </div>
 
@@ -29,6 +51,11 @@ Focus on the everyday behaviours that make technical work easier to share, revie
     <h3>Writing Good Technical Notes</h3>
     <p>Write clearer tickets, handovers, updates, and decision notes so other people can act with confidence.</p>
   </a>
+  <a class="de-card" href="managing-context-switching/">
+    <span class="de-card__label">Work habits</span>
+    <h3>Managing Context Switching</h3>
+    <p>Protect focus, recover faster after interruptions, and keep important work moving without losing context.</p>
+  </a>
 </div>
 
 ## Collaboration
@@ -40,6 +67,11 @@ Explore the shared practices teams use to work on technical projects without los
     <span class="de-card__label">Collaboration</span>
     <h3>Git and Version Control</h3>
     <p>Understand commits, branches, pull requests, and the everyday Git commands used on technical projects.</p>
+  </a>
+  <a class="de-card" href="working-with-pull-requests/">
+    <span class="de-card__label">Collaboration</span>
+    <h3>Working With Pull Requests</h3>
+    <p>Describe changes clearly, respond to review comments, and help a team merge work with confidence.</p>
   </a>
 </div>
 
@@ -53,6 +85,11 @@ Learn how teams check work, improve it safely, and give feedback that is useful 
     <h3>Code Review Essentials</h3>
     <p>Learn what code review is for, how to give useful feedback, and how to receive it well.</p>
   </a>
+  <a class="de-card" href="testing-basics-for-non-testers/">
+    <span class="de-card__label">Quality</span>
+    <h3>Testing Basics for Non-Testers</h3>
+    <p>Check work more deliberately, use acceptance criteria, and spot risks before changes reach users.</p>
+  </a>
 </div>
 
 ## Infrastructure
@@ -64,6 +101,11 @@ Understand the systems and hosting choices that sit underneath digital products,
     <span class="de-card__label">Infrastructure</span>
     <h3>Cloud vs On-Prem</h3>
     <p>Compare two broad ways organisations run technology systems and where responsibility sits.</p>
+  </a>
+  <a class="de-card" href="what-is-an-api/">
+    <span class="de-card__label">Infrastructure</span>
+    <h3>What Is an API?</h3>
+    <p>Understand how systems talk to each other, what requests and responses are, and why APIs matter at work.</p>
   </a>
 </div>
 
@@ -77,6 +119,11 @@ Use clearer language for diagnosing issues, reporting problems, and separating w
     <h3>Incidents, Bugs, and Problems</h3>
     <p>Use clearer language when things go wrong and separate symptoms from causes.</p>
   </a>
+  <a class="de-card" href="writing-a-good-bug-report/">
+    <span class="de-card__label">Support</span>
+    <h3>Writing a Good Bug Report</h3>
+    <p>Report issues with enough context, evidence, and impact so someone else can investigate quickly.</p>
+  </a>
 </div>
 
 ## Decision Making
@@ -88,5 +135,10 @@ Slow down before choosing a tool, solution, or process change, and ask better qu
     <span class="de-card__label">Decision making</span>
     <h3>Technical Judgement</h3>
     <p>Ask better questions before recommending a solution, tool, design, or process change.</p>
+  </a>
+  <a class="de-card" href="choosing-the-right-tool/">
+    <span class="de-card__label">Decision making</span>
+    <h3>Choosing the Right Tool</h3>
+    <p>Compare options without chasing novelty, and choose tools that fit the problem, people, and constraints.</p>
   </a>
 </div>

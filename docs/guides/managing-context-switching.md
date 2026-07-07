@@ -132,6 +132,15 @@ When you return to a task, avoid jumping straight into editing. Rebuild the cont
   </article>
 </div>
 
+<section class="de-guide-activity" data-checklist-activity="restart-note">
+  <div class="de-guide-activity__intro">
+    <span class="de-content-label">Practice</span>
+    <h2>Restart Note Builder</h2>
+    <p>Build a useful note for returning to work after an interruption.</p>
+    <button type="button" class="de-guide-activity__start" data-activity-start>Start the activity</button>
+  </div>
+</section>
+
 ## Mini Challenge
 
 Write a restart note for this situation: you are updating a guide, but you need to stop for a meeting before you have finished checking the links.

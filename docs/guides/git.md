@@ -128,6 +128,15 @@ Pull requests are not just for code. They can also be used for documentation, co
 | <code>git push</code> | Send your commits to the remote repository. |
 | <code>git log --oneline</code> | View recent commit history. |
 
+<section class="de-guide-activity" data-matching-activity="git-command-sequence">
+  <div class="de-guide-activity__intro">
+    <span class="de-content-label">Practice</span>
+    <h2>Command Sequence Challenge</h2>
+    <p>Put the everyday Git workflow into the right order for a small documentation change.</p>
+    <button type="button" class="de-guide-activity__start" data-activity-start>Start the activity</button>
+  </div>
+</section>
+
 ## Scenario Task
 
 <section class="de-scenario-task">

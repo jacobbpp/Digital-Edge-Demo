@@ -83,6 +83,15 @@ Imagine a learning platform that needs to show upcoming events.
 | Authentication | A way to prove the requesting system is allowed to use the API. |
 | Payload | The data sent with a request or returned in a response. |
 
+<section class="de-guide-activity" data-matching-activity="api-request-builder">
+  <div class="de-guide-activity__intro">
+    <span class="de-content-label">Practice</span>
+    <h2>Request And Response Builder</h2>
+    <p>Match the parts of a simple API conversation to what each one does.</p>
+    <button type="button" class="de-guide-activity__start" data-activity-start>Start the activity</button>
+  </div>
+</section>
+
 ## Why APIs Matter At Work
 
 APIs are useful because they reduce manual effort and allow systems to work together.

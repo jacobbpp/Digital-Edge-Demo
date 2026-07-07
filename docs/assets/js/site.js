@@ -707,6 +707,518 @@
     if (start) start.addEventListener("click", startActivity);
   }
 
+  function installChoiceActivities() {
+    const configs = {
+      "delivery-approach": {
+        title: "Choose the Delivery Approach",
+        intro: "Choose the delivery style that best fits each situation.",
+        badge: "Scenario choice",
+        options: ["Agile", "Waterfall", "Hybrid"],
+        scenarios: [
+          {
+            prompt: "A compliance report has fixed legal requirements, formal approval stages, and a deadline that cannot move.",
+            answer: "Waterfall",
+            feedback: "Waterfall thinking helps when requirements are stable, approval is formal, and late changes would be expensive."
+          },
+          {
+            prompt: "A team is building a dashboard, but stakeholders are still discovering which metrics are most useful.",
+            answer: "Agile",
+            feedback: "Agile suits discovery because the team can build a small version, gather feedback, and adapt."
+          },
+          {
+            prompt: "A platform migration has fixed governance gates, but each team needs short cycles to test and improve its part.",
+            answer: "Hybrid",
+            feedback: "Many real projects blend a planned structure with Agile habits inside the work."
+          }
+        ]
+      },
+      "review-comment": {
+        title: "Rewrite The Review Comment",
+        intro: "Pick the review comment that is specific, kind, and useful enough to act on.",
+        badge: "Feedback practice",
+        options: ["Too vague", "Useful feedback", "Too personal"],
+        scenarios: [
+          {
+            prompt: "\"This is confusing.\"",
+            answer: "Too vague",
+            feedback: "It names a feeling but not the specific issue. The author will not know what to change."
+          },
+          {
+            prompt: "\"Could this function name describe the result it returns? I found it hard to follow when reading the next step.\"",
+            answer: "Useful feedback",
+            feedback: "This is specific, explains the impact, and suggests a direction without attacking the person."
+          },
+          {
+            prompt: "\"You clearly did not think this through.\"",
+            answer: "Too personal",
+            feedback: "This targets the person rather than the work. Useful review comments focus on risk, clarity, and improvement."
+          }
+        ]
+      },
+      "issue-classifier": {
+        title: "Classify The Issue",
+        intro: "Decide whether each example is an incident, bug, problem, or request.",
+        badge: "Support language",
+        options: ["Incident", "Bug", "Problem", "Request"],
+        scenarios: [
+          {
+            prompt: "Learners cannot access the assessment platform this morning.",
+            answer: "Incident",
+            feedback: "This disrupts service for users now, so it should be treated as an incident."
+          },
+          {
+            prompt: "The export button always downloads an empty file when filters are applied.",
+            answer: "Bug",
+            feedback: "This is incorrect product behaviour that can be reproduced."
+          },
+          {
+            prompt: "The same login issue has happened three times this month and the team needs to understand the underlying cause.",
+            answer: "Problem",
+            feedback: "A repeated pattern points to problem investigation and root cause analysis."
+          },
+          {
+            prompt: "A manager asks for a new column to be added to a weekly report.",
+            answer: "Request",
+            feedback: "This is a request for a change or addition, not something currently broken."
+          }
+        ]
+      },
+      "trade-off-cards": {
+        title: "Trade-Off Cards",
+        intro: "Identify what each recommendation is mostly optimising for.",
+        badge: "Judgement practice",
+        options: ["Speed", "Cost", "Quality", "Maintainability", "Risk reduction"],
+        scenarios: [
+          {
+            prompt: "Patch the issue manually today, then schedule a proper fix after the event.",
+            answer: "Speed",
+            feedback: "This prioritises immediate progress, while accepting that more maintainable work is still needed."
+          },
+          {
+            prompt: "Use the existing approved platform even though it has fewer advanced features.",
+            answer: "Risk reduction",
+            feedback: "This reduces governance, security, and support risk by staying inside known controls."
+          },
+          {
+            prompt: "Refactor the repeated logic before adding more features to this area.",
+            answer: "Maintainability",
+            feedback: "This may slow delivery now, but it should make future changes easier and safer."
+          }
+        ]
+      }
+    };
+
+    function shuffled(items) {
+      const result = [...items];
+      for (let i = result.length - 1; i > 0; i -= 1) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [result[i], result[j]] = [result[j], result[i]];
+      }
+      return result;
+    }
+
+    document.querySelectorAll("[data-choice-activity]").forEach((activity) => {
+      const config = configs[activity.dataset.choiceActivity];
+      const start = activity.querySelector("[data-activity-start]");
+      if (!config || !start) return;
+
+      start.addEventListener("click", () => {
+        let index = 0;
+        let score = 0;
+        const scenarios = shuffled(config.scenarios);
+
+        function renderScenario() {
+          const scenario = scenarios[index];
+          activity.innerHTML = `
+            <div class="de-guide-activity__shell">
+              <div class="de-guide-activity__hero">
+                <div>
+                  <span class="de-content-label">Practice</span>
+                  <h2>${config.title}</h2>
+                  <p>${config.intro}</p>
+                </div>
+                <span class="de-guide-activity__badge">${index + 1}/${scenarios.length}</span>
+              </div>
+              <div class="de-guide-activity__panel">
+                <span>${config.badge}</span>
+                <p>${scenario.prompt}</p>
+              </div>
+              <div class="de-guide-activity__options" data-choice-options></div>
+              <div class="de-guide-activity__feedback" data-choice-feedback hidden></div>
+              <div class="de-guide-activity__actions">
+                <button type="button" class="de-guide-activity__primary" data-choice-next disabled>${index === scenarios.length - 1 ? "Show result" : "Next scenario"}</button>
+                <button type="button" class="de-guide-activity__secondary" data-choice-reset>Reset</button>
+              </div>
+            </div>
+          `;
+
+          const options = activity.querySelector("[data-choice-options]");
+          const feedback = activity.querySelector("[data-choice-feedback]");
+          const next = activity.querySelector("[data-choice-next]");
+
+          shuffled(config.options).forEach((option) => {
+            const button = document.createElement("button");
+            button.type = "button";
+            button.className = "de-guide-activity__option";
+            button.textContent = option;
+            button.addEventListener("click", () => {
+              const isCorrect = option === scenario.answer;
+              if (isCorrect) score += 1;
+              options.querySelectorAll("button").forEach((item) => {
+                item.disabled = true;
+                if (item.textContent === scenario.answer) item.classList.add("is-correct");
+              });
+              if (!isCorrect) button.classList.add("is-extra");
+              feedback.hidden = false;
+              feedback.innerHTML = `
+                <strong>${isCorrect ? "Good choice." : `Best answer: ${scenario.answer}.`}</strong>
+                <p>${scenario.feedback}</p>
+              `;
+              next.disabled = false;
+              next.focus();
+            });
+            options.appendChild(button);
+          });
+
+          next.addEventListener("click", () => {
+            if (index === scenarios.length - 1) {
+              activity.querySelector(".de-guide-activity__shell").innerHTML = `
+                <div class="de-guide-activity__result">
+                  <span class="de-content-label">Complete</span>
+                  <h2>${config.title}</h2>
+                  <strong>${score}/${scenarios.length}</strong>
+                  <p>${score === scenarios.length ? "Strong judgement. You matched each scenario to the right idea." : "Good practice. Review the feedback and try again when you want to strengthen the pattern."}</p>
+                  <button type="button" class="de-guide-activity__secondary" data-choice-retry>Try again</button>
+                </div>
+              `;
+              activity.querySelector("[data-choice-retry]").addEventListener("click", () => start.click());
+            } else {
+              index += 1;
+              renderScenario();
+            }
+          });
+          activity.querySelector("[data-choice-reset]").addEventListener("click", () => start.click());
+        }
+
+        renderScenario();
+      });
+    });
+  }
+
+  function installChecklistActivities() {
+    const configs = {
+      "break-it-down": {
+        title: "Break It Down",
+        intro: "Choose the actions that turn \"prepare for assessment\" into practical work.",
+        badge: "Vague goal",
+        prompt: "Prepare for assessment.",
+        success: "Good breakdown. You chose actions that make progress visible and reviewable.",
+        review: "The strongest breakdown includes concrete actions, evidence, review, and blockers.",
+        items: [
+          { label: "List the assessment criteria I need to evidence", correct: true },
+          { label: "Find two examples of work that match the criteria", correct: true },
+          { label: "Write questions for anything I do not understand", correct: true },
+          { label: "Book time for review or feedback", correct: true },
+          { label: "Check what evidence is missing", correct: true },
+          { label: "Try to finish everything in one long session", correct: false },
+          { label: "Wait until I feel ready before starting", correct: false }
+        ]
+      },
+      "technical-note-fix": {
+        title: "Before And After Notes",
+        intro: "Choose the details that make this handover useful.",
+        badge: "Weak note",
+        prompt: "Dashboard broken. Needs fixing.",
+        success: "Useful note. You added context, evidence, impact, and a next step.",
+        review: "A stronger note helps another person understand what happened and what to do next.",
+        items: [
+          { label: "Users see a blank dashboard after applying the department filter", correct: true },
+          { label: "Issue reproduced in Chrome and Edge at 10:30", correct: true },
+          { label: "Only the department filter appears affected", correct: true },
+          { label: "Next step: check the filter query and recent data changes", correct: true },
+          { label: "Impact: managers cannot view filtered progress reports", correct: true },
+          { label: "Something is weird", correct: false },
+          { label: "Probably a backend thing", correct: false }
+        ]
+      },
+      "restart-note": {
+        title: "Restart Note Builder",
+        intro: "Choose what belongs in a restart note before stepping away.",
+        badge: "Interrupted task",
+        prompt: "You are updating a guide and need to leave before checking the links.",
+        success: "Good restart note. Future you can return without rebuilding all the context.",
+        review: "A useful restart note captures current state, next action, blockers, and evidence.",
+        items: [
+          { label: "Updated the first three sections", correct: true },
+          { label: "Still need to check internal links and build output", correct: true },
+          { label: "Next action: run the link/build check", correct: true },
+          { label: "Possible blocker: one linked page may have moved", correct: true },
+          { label: "Relevant file: guides/checking-ai-outputs.md", correct: true },
+          { label: "Will remember where I got to", correct: false },
+          { label: "Basically done", correct: false }
+        ]
+      },
+      "pr-readiness": {
+        title: "PR Readiness Check",
+        intro: "Flag what this pull request still needs before review.",
+        badge: "Mock pull request",
+        prompt: "Title: updates. Description: changed some guide stuff.",
+        success: "Ready for review. You spotted the gaps that slow reviewers down.",
+        review: "A useful pull request explains purpose, checks, scope, and reviewer focus.",
+        items: [
+          { label: "Clear summary of what changed", correct: true },
+          { label: "Why the change was needed", correct: true },
+          { label: "What checks were run", correct: true },
+          { label: "Screenshots or examples if the change is visual", correct: true },
+          { label: "Anything reviewers should focus on", correct: true },
+          { label: "A bigger unrelated refactor", correct: false },
+          { label: "A vague note saying \"looks fine\"", correct: false }
+        ]
+      },
+      "pick-test-cases": {
+        title: "Pick The Test Cases",
+        intro: "Choose useful checks for a new file upload button.",
+        badge: "Feature check",
+        prompt: "Learners can upload a PDF evidence file.",
+        success: "Good coverage. You included happy path, error, edge, and regression thinking.",
+        review: "Useful testing checks normal use, failures, unusual cases, and nearby behaviour.",
+        items: [
+          { label: "Upload a valid PDF and confirm it appears", correct: true },
+          { label: "Try an unsupported file type", correct: true },
+          { label: "Try a file larger than the allowed limit", correct: true },
+          { label: "Check the error message is understandable", correct: true },
+          { label: "Confirm existing uploaded files still display", correct: true },
+          { label: "Only test once with my favourite file", correct: false },
+          { label: "Skip error cases if the happy path works", correct: false }
+        ]
+      },
+      "tool-fit-scorecard": {
+        title: "Tool Fit Scorecard",
+        intro: "Choose the criteria that matter before recommending a new tool.",
+        badge: "Tool request",
+        prompt: "A team wants to buy a new AI note-taking tool.",
+        success: "Strong scorecard. You considered fit, people, data, cost, support, and accessibility.",
+        review: "Tool decisions should start with the problem and include risk, maintenance, and users.",
+        items: [
+          { label: "What problem are we solving?", correct: true },
+          { label: "What data will the tool capture or store?", correct: true },
+          { label: "Who will use and support it?", correct: true },
+          { label: "Does it integrate with approved systems?", correct: true },
+          { label: "What are the setup, licence, and exit costs?", correct: true },
+          { label: "Is it popular on social media?", correct: false },
+          { label: "Does the demo look impressive?", correct: false }
+        ]
+      }
+    };
+
+    document.querySelectorAll("[data-checklist-activity]").forEach((activity) => {
+      const config = configs[activity.dataset.checklistActivity];
+      const start = activity.querySelector("[data-activity-start]");
+      if (!config || !start) return;
+
+      start.addEventListener("click", () => {
+        activity.innerHTML = `
+          <div class="de-guide-activity__shell">
+            <div class="de-guide-activity__hero">
+              <div>
+                <span class="de-content-label">Practice</span>
+                <h2>${config.title}</h2>
+                <p>${config.intro}</p>
+              </div>
+              <span class="de-guide-activity__badge">${config.badge}</span>
+            </div>
+            <div class="de-guide-activity__panel">
+              <span>Scenario</span>
+              <p>${config.prompt}</p>
+            </div>
+            <div class="de-guide-activity__options" data-checklist-options></div>
+            <div class="de-guide-activity__actions">
+              <button type="button" class="de-guide-activity__primary" data-checklist-check>Check choices</button>
+              <button type="button" class="de-guide-activity__secondary" data-checklist-reset>Reset</button>
+            </div>
+            <div class="de-guide-activity__feedback" data-checklist-feedback hidden></div>
+          </div>
+        `;
+
+        const options = activity.querySelector("[data-checklist-options]");
+        const feedback = activity.querySelector("[data-checklist-feedback]");
+
+        config.items.forEach((item, index) => {
+          const label = document.createElement("label");
+          label.className = "de-guide-activity__option";
+          label.innerHTML = `<input type="checkbox" value="${index}"><span>${item.label}</span>`;
+          options.appendChild(label);
+        });
+
+        activity.querySelector("[data-checklist-check]").addEventListener("click", () => {
+          let found = 0;
+          let missed = 0;
+          let extra = 0;
+
+          options.querySelectorAll(".de-guide-activity__option").forEach((label) => {
+            const input = label.querySelector("input");
+            const item = config.items[Number(input.value)];
+            label.classList.remove("is-correct", "is-missed", "is-extra");
+            if (item.correct && input.checked) {
+              found += 1;
+              label.classList.add("is-correct");
+            } else if (item.correct) {
+              missed += 1;
+              label.classList.add("is-missed");
+            } else if (input.checked) {
+              extra += 1;
+              label.classList.add("is-extra");
+            }
+          });
+
+          feedback.hidden = false;
+          feedback.innerHTML = `
+            <strong>${missed === 0 && extra === 0 ? config.success : config.review}</strong>
+            <p>You selected ${found} useful item${found === 1 ? "" : "s"}.${missed ? ` ${missed} useful item${missed === 1 ? "" : "s"} still need attention.` : ""}${extra ? ` ${extra} selected item${extra === 1 ? "" : "s"} would weaken the answer.` : ""}</p>
+          `;
+        });
+
+        activity.querySelector("[data-checklist-reset]").addEventListener("click", () => start.click());
+      });
+    });
+  }
+
+  function installMatchingActivities() {
+    const configs = {
+      "git-command-sequence": {
+        title: "Command Sequence Challenge",
+        intro: "Choose the command that fits each step in the workflow.",
+        badge: "README update",
+        prompt: "You changed a README and want to share the update safely.",
+        options: [
+          { key: "status", text: "git status" },
+          { key: "diff", text: "git diff" },
+          { key: "add", text: "git add README.md" },
+          { key: "commit", text: "git commit -m \"Update README\"" },
+          { key: "push", text: "git push" }
+        ],
+        fields: [
+          { key: "status", label: "1. Check what changed" },
+          { key: "diff", label: "2. Inspect the actual edit" },
+          { key: "add", label: "3. Stage the file" },
+          { key: "commit", label: "4. Save the checkpoint" },
+          { key: "push", label: "5. Share the commit" }
+        ],
+        success: "Correct sequence. This is the everyday safe workflow.",
+        review: "Some steps are out of order. Check, inspect, stage, commit, then push."
+      },
+      "responsibility-sorter": {
+        title: "Responsibility Sorter",
+        intro: "Sort each responsibility in a cloud setup.",
+        badge: "Shared responsibility",
+        prompt: "A team is moving a reporting tool to the cloud.",
+        options: [
+          { key: "provider", text: "Cloud provider" },
+          { key: "organisation", text: "Organisation" },
+          { key: "shared", text: "Shared responsibility" }
+        ],
+        fields: [
+          { key: "provider", label: "Physical data centre security" },
+          { key: "organisation", label: "User access and permissions" },
+          { key: "organisation", label: "Checking what data can be uploaded" },
+          { key: "shared", label: "Availability and recovery planning" },
+          { key: "organisation", label: "Monitoring cost and usage" }
+        ],
+        success: "Good sorting. Cloud changes responsibility, but it does not remove it.",
+        review: "Cloud providers manage the platform, but organisations still own access, data, cost, and configuration choices."
+      },
+      "api-request-builder": {
+        title: "Request And Response Builder",
+        intro: "Match the API term to what it does.",
+        badge: "API parts",
+        prompt: "A dashboard asks another system for learner progress data.",
+        options: [
+          { key: "endpoint", text: "Endpoint" },
+          { key: "method", text: "Method" },
+          { key: "auth", text: "Authentication" },
+          { key: "payload", text: "Payload" },
+          { key: "response", text: "Response" }
+        ],
+        fields: [
+          { key: "endpoint", label: "The specific API address being called" },
+          { key: "method", label: "The action type, such as reading or updating" },
+          { key: "auth", label: "Proof the system is allowed to make the request" },
+          { key: "payload", label: "Data sent with the request or returned by it" },
+          { key: "response", label: "What the API sends back" }
+        ],
+        success: "Good match. You can identify the main parts of an API conversation.",
+        review: "Some terms are mixed up. Think request, permission, data, and reply."
+      }
+    };
+
+    document.querySelectorAll("[data-matching-activity]").forEach((activity) => {
+      const config = configs[activity.dataset.matchingActivity];
+      const start = activity.querySelector("[data-activity-start]");
+      if (!config || !start) return;
+
+      start.addEventListener("click", () => {
+        activity.innerHTML = `
+          <div class="de-guide-activity__shell">
+            <div class="de-guide-activity__hero">
+              <div>
+                <span class="de-content-label">Practice</span>
+                <h2>${config.title}</h2>
+                <p>${config.intro}</p>
+              </div>
+              <span class="de-guide-activity__badge">${config.badge}</span>
+            </div>
+            <div class="de-guide-activity__panel">
+              <span>Scenario</span>
+              <p>${config.prompt}</p>
+            </div>
+            <div class="de-guide-activity__field-grid" data-matching-fields></div>
+            <div class="de-guide-activity__actions">
+              <button type="button" class="de-guide-activity__primary" data-matching-check>Check matches</button>
+              <button type="button" class="de-guide-activity__secondary" data-matching-reset>Reset</button>
+            </div>
+            <div class="de-guide-activity__feedback" data-matching-feedback hidden></div>
+          </div>
+        `;
+
+        const fields = activity.querySelector("[data-matching-fields]");
+        const feedback = activity.querySelector("[data-matching-feedback]");
+
+        config.fields.forEach((field, index) => {
+          const wrapper = document.createElement("div");
+          wrapper.className = "de-guide-activity__field";
+          const options = config.options.map((option) => `<option value="${option.key}">${option.text}</option>`).join("");
+          wrapper.innerHTML = `
+            <label for="${activity.dataset.matchingActivity}-${index}">${field.label}</label>
+            <select id="${activity.dataset.matchingActivity}-${index}" data-answer="${field.key}">
+              <option value="">Choose an answer</option>
+              ${options}
+            </select>
+          `;
+          fields.appendChild(wrapper);
+        });
+
+        activity.querySelector("[data-matching-check]").addEventListener("click", () => {
+          let correct = 0;
+          fields.querySelectorAll("select").forEach((select) => {
+            const isCorrect = select.value === select.dataset.answer;
+            select.classList.toggle("is-correct", isCorrect);
+            select.classList.toggle("is-extra", !isCorrect && Boolean(select.value));
+            if (isCorrect) correct += 1;
+          });
+
+          const complete = correct === config.fields.length;
+          feedback.hidden = false;
+          feedback.innerHTML = `
+            <strong>${complete ? config.success : `${correct}/${config.fields.length} matches are correct.`}</strong>
+            <p>${complete ? "Nice. The pattern is in place." : config.review}</p>
+          `;
+        });
+
+        activity.querySelector("[data-matching-reset]").addEventListener("click", () => start.click());
+      });
+    });
+  }
+
   function installBiasGame() {
     const game = document.querySelector("[data-bias-game]");
     if (!game) return;
@@ -893,6 +1405,9 @@
     document.addEventListener("DOMContentLoaded", installPromptBuilder);
     document.addEventListener("DOMContentLoaded", installHiddenWorkEstimator);
     document.addEventListener("DOMContentLoaded", installBugReportBuilder);
+    document.addEventListener("DOMContentLoaded", installChoiceActivities);
+    document.addEventListener("DOMContentLoaded", installChecklistActivities);
+    document.addEventListener("DOMContentLoaded", installMatchingActivities);
     document.addEventListener("DOMContentLoaded", installBiasGame);
   } else {
     installCodeCopyButtons();
@@ -903,6 +1418,9 @@
     installPromptBuilder();
     installHiddenWorkEstimator();
     installBugReportBuilder();
+    installChoiceActivities();
+    installChecklistActivities();
+    installMatchingActivities();
     installBiasGame();
   }
 

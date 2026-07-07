@@ -53,6 +53,15 @@ Good technical judgement does not mean finding a perfect answer. It means unders
   </article>
 </div>
 
+<section class="de-guide-activity" data-choice-activity="trade-off-cards">
+  <div class="de-guide-activity__intro">
+    <span class="de-content-label">Practice</span>
+    <h2>Trade-Off Cards</h2>
+    <p>Look at a recommendation and decide what it optimises for.</p>
+    <button type="button" class="de-guide-activity__start" data-activity-start>Start the activity</button>
+  </div>
+</section>
+
 ## Mini Challenge
 
 Think of a tool, process, or workaround you use. What does it optimise for: speed, cost, quality, control, or ease of use? What does it make harder?

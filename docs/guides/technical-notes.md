@@ -112,6 +112,15 @@ Use this structure when you are not sure how to write a note:
   </div>
 </details>
 
+<section class="de-guide-activity" data-checklist-activity="technical-note-fix">
+  <div class="de-guide-activity__intro">
+    <span class="de-content-label">Practice</span>
+    <h2>Before And After Notes</h2>
+    <p>Improve a vague handover by choosing the details that make it useful for someone else.</p>
+    <button type="button" class="de-guide-activity__start" data-activity-start>Start the activity</button>
+  </div>
+</section>
+
 ## Mini Challenge
 
 Rewrite this note:

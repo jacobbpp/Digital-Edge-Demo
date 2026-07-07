@@ -119,6 +119,15 @@ Do a final self-review. Many issues are easier to fix before asking someone else
   </ol>
 </details>
 
+<section class="de-guide-activity" data-checklist-activity="pr-readiness">
+  <div class="de-guide-activity__intro">
+    <span class="de-content-label">Practice</span>
+    <h2>PR Readiness Check</h2>
+    <p>Review a mock pull request and flag what should be added before asking for review.</p>
+    <button type="button" class="de-guide-activity__start" data-activity-start>Start the activity</button>
+  </div>
+</section>
+
 ## Mini Challenge
 
 Write a pull request summary for this change: you updated a learner guide, fixed two broken links, and checked the site builds successfully.

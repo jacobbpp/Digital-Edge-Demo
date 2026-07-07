@@ -55,6 +55,15 @@ Cloud and on-prem are two broad ways organisations run technology systems. The i
   </article>
 </div>
 
+<section class="de-guide-activity" data-matching-activity="responsibility-sorter">
+  <div class="de-guide-activity__intro">
+    <span class="de-content-label">Practice</span>
+    <h2>Responsibility Sorter</h2>
+    <p>Sort common responsibilities between the cloud provider, the organisation, or both.</p>
+    <button type="button" class="de-guide-activity__start" data-activity-start>Start the activity</button>
+  </div>
+</section>
+
 ## Mini Challenge
 
 For a system you use at work, ask: where does it run, who manages access, and what would happen if it became unavailable?

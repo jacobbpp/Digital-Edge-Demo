@@ -62,4 +62,4 @@ Technology teams need a shared language for things going wrong. Clear language h
 
 Pick a familiar problem and write one symptom, one possible cause, and one question you would ask next.
 
-<p><a class="de-inline-button" href="../">Back to Technology Foundations</a></p>
+<p><a class="de-inline-button" href="../">Back to Guides</a></p>

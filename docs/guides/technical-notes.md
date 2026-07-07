@@ -120,4 +120,4 @@ Rewrite this note:
 
 Turn it into a useful technical note with context, evidence, impact, and next step.
 
-<p><a class="de-inline-button" href="../">Back to Technology Foundations</a></p>
+<p><a class="de-inline-button" href="../">Back to Guides</a></p>

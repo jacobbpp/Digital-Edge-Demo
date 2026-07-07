@@ -144,4 +144,4 @@ What could go wrong if a team had no version history for a project? Think about 
   <p>You should now be able to explain what Git is for, describe the difference between local and remote repositories, and follow a simple status, add, commit, push workflow.</p>
 </div>
 
-<p><a class="de-inline-button" href="../">Back to Technology Foundations</a></p>
+<p><a class="de-inline-button" href="../">Back to Guides</a></p>

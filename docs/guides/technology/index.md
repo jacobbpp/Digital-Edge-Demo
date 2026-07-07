@@ -1,6 +1,6 @@
-# Technology Foundations Learning Path
+# Technology Foundations
 
-Technology work becomes easier when you understand the language, habits, and decisions that sit around the tools. This pathway gives learners a practical introduction to common technology concepts that appear across software, data, cloud, support, cybersecurity, and digital transformation roles.
+Technology work becomes easier when you understand the language, habits, and decisions that sit around the tools. These guides give learners a practical introduction to common technology concepts that appear across cloud, support, cybersecurity, delivery, and digital transformation roles.
 
 <div class="de-path-summary">
   <div>
@@ -62,16 +62,16 @@ Technology work becomes easier when you understand the language, habits, and dec
   </a>
 </div>
 
-## How To Use This Path
+## Using These Guides
 
 Pick one card at a time. Read the plain-English explanation, complete the mini challenge, then bring one question or example to your next coaching, project, or team conversation.
 
 <section class="de-scenario-task">
   <h2>Scenario Task</h2>
-  <p>You are joining a project meeting where people mention sprints, incidents, cloud hosting, code review, and blockers. Pick two cards from this pathway and write down one question you would ask to understand the conversation better.</p>
+  <p>You are joining a project meeting where people mention sprints, incidents, cloud hosting, code review, and blockers. Pick two guides and write down one question you would ask to understand the conversation better.</p>
 </section>
 
 <div class="de-completion-card">
   <h2>Foundation outcome</h2>
-  <p>By the end of this pathway, you should feel more comfortable joining technology conversations, asking better questions, and connecting technical ideas to workplace decisions.</p>
+  <p>After working through these guides, you should feel more comfortable joining technology conversations, asking better questions, and connecting technical ideas to workplace decisions.</p>
 </div>

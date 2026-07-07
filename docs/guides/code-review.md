@@ -64,4 +64,4 @@ A code review is not a personal judgement. It is a quality conversation about wh
 
 Rewrite “bad naming” as a specific, helpful review comment.
 
-<p><a class="de-inline-button" href="../">Back to Technology Foundations</a></p>
+<p><a class="de-inline-button" href="../">Back to Guides</a></p>

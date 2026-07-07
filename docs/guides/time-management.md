@@ -64,4 +64,4 @@ Do not estimate a vague task. Break it down first.
 
 Rewrite “prepare for assessment” as five smaller tasks with clear outcomes.
 
-<p><a class="de-inline-button" href="../">Back to Technology Foundations</a></p>
+<p><a class="de-inline-button" href="../">Back to Guides</a></p>

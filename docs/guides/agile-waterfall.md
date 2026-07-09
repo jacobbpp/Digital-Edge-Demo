@@ -59,11 +59,11 @@ Waterfall puts more weight on the early plan. Agile puts more weight on repeated
   </article>
 </div>
 
-<section class="de-guide-activity" data-choice-activity="delivery-approach">
+<section class="de-guide-activity" data-method-interview>
   <div class="de-guide-activity__intro">
     <span class="de-content-label">Practice</span>
-    <h2>Choose the Delivery Approach</h2>
-    <p>Read short project scenarios and decide whether Agile, Waterfall, or Hybrid is the best fit.</p>
+    <h2>Project Method Matchmaker</h2>
+    <p>Interview a stakeholder, then recommend Agile, Waterfall, or Hybrid.</p>
     <button type="button" class="de-guide-activity__start" data-activity-start>Start the activity</button>
   </div>
 </section>

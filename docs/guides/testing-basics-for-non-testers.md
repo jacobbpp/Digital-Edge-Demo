@@ -78,15 +78,6 @@ Before checking a change, write what you expect to happen. This keeps testing fo
   <label><input type="checkbox"> What evidence can I share that I checked it?</label>
 </div>
 
-<section class="de-guide-activity" data-checklist-activity="pick-test-cases">
-  <div class="de-guide-activity__intro">
-    <span class="de-content-label">Practice</span>
-    <h2>Pick The Test Cases</h2>
-    <p>Choose the checks that would give useful confidence before a feature reaches users.</p>
-    <button type="button" class="de-guide-activity__start" data-activity-start>Start the activity</button>
-  </div>
-</section>
-
 ## Evidence Matters
 
 Testing notes do not need to be long, but they should be useful. Evidence helps reviewers, teammates, and future you understand what was checked.

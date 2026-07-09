@@ -68,12 +68,12 @@ Weak prompts usually make the AI guess the audience, purpose, format, level of d
 | Constraint | Keep the tone calm, professional, and plain English. |
 | Quality bar | Highlight anything uncertain rather than inventing details. |
 
-<section class="de-guide-activity" data-prompt-builder>
+<section class="de-guide-activity" data-prompt-surgery>
   <div class="de-guide-activity__intro">
     <span class="de-content-label">Practice</span>
-    <h2>Prompt Builder</h2>
-    <p>Start with a weak prompt and choose the ingredients that make it clearer, safer, and easier to check.</p>
-    <button type="button" class="de-guide-activity__start" data-prompt-builder-start>Start the activity</button>
+    <h2>Prompt Repair Workshop</h2>
+    <p>Diagnose a weak AI answer, rewrite the prompt, and test whether your changes would make the output easier to use.</p>
+    <button type="button" class="de-guide-activity__start" data-activity-start>Start the activity</button>
   </div>
   <noscript>
     <p>This activity needs JavaScript, but the prompt ingredients above still show what to include.</p>

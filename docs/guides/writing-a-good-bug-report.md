@@ -124,12 +124,12 @@ Screenshots, error messages, links, timestamps, logs, or examples.
 Refresh, different browser, repeated steps, checked another account, or anything else useful.
 ```
 
-<section class="de-guide-activity" data-bug-report-builder>
+<section class="de-guide-activity" data-bug-detective>
   <div class="de-guide-activity__intro">
     <span class="de-content-label">Practice</span>
-    <h2>Bug Report Builder</h2>
-    <p>Turn messy notes into a clear bug report by choosing the right detail for each section.</p>
-    <button type="button" class="de-guide-activity__start" data-bug-builder-start>Start the activity</button>
+    <h2>Bug Report Detective</h2>
+    <p>Pick useful clues from messy evidence and assemble a report.</p>
+    <button type="button" class="de-guide-activity__start" data-activity-start>Start the activity</button>
   </div>
   <noscript>
     <p>This activity needs JavaScript, but the template above still shows the structure to follow.</p>

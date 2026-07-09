@@ -43,11 +43,11 @@ A code review is not a personal judgement. It is a quality conversation about wh
   </article>
 </div>
 
-<section class="de-guide-activity" data-choice-activity="review-comment">
+<section class="de-guide-activity" data-tone-mixer>
   <div class="de-guide-activity__intro">
     <span class="de-content-label">Practice</span>
-    <h2>Rewrite The Review Comment</h2>
-    <p>Choose the feedback that is specific, kind, and useful enough to act on.</p>
+    <h2>Comment Tone Mixer</h2>
+    <p>Tune a review comment so it becomes specific, kind, and actionable.</p>
     <button type="button" class="de-guide-activity__start" data-activity-start>Start the activity</button>
   </div>
 </section>

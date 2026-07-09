@@ -53,11 +53,11 @@ Good technical judgement does not mean finding a perfect answer. It means unders
   </article>
 </div>
 
-<section class="de-guide-activity" data-choice-activity="trade-off-cards">
+<section class="de-guide-activity" data-decision-brief>
   <div class="de-guide-activity__intro">
     <span class="de-content-label">Practice</span>
-    <h2>Trade-Off Cards</h2>
-    <p>Look at a recommendation and decide what it optimises for.</p>
+    <h2>Decision Brief</h2>
+    <p>Ask better questions before approving, pausing, or investigating a solution.</p>
     <button type="button" class="de-guide-activity__start" data-activity-start>Start the activity</button>
   </div>
 </section>

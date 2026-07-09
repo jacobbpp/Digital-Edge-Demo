@@ -83,11 +83,11 @@ Imagine a learning platform that needs to show upcoming events.
 | Authentication | A way to prove the requesting system is allowed to use the API. |
 | Payload | The data sent with a request or returned in a response. |
 
-<section class="de-guide-activity" data-matching-activity="api-request-builder">
+<section class="de-guide-activity" data-api-flow>
   <div class="de-guide-activity__intro">
     <span class="de-content-label">Practice</span>
-    <h2>Request And Response Builder</h2>
-    <p>Match the parts of a simple API conversation to what each one does.</p>
+    <h2>API Conversation Builder</h2>
+    <p>Build the request and response flow between two systems.</p>
     <button type="button" class="de-guide-activity__start" data-activity-start>Start the activity</button>
   </div>
 </section>

@@ -99,18 +99,6 @@ Technical work is not done when the first version works on your machine. A stron
   <label><input type="checkbox"> Review, feedback, and final changes</label>
 </div>
 
-<section class="de-guide-activity" data-hidden-work-estimator>
-  <div class="de-guide-activity__intro">
-    <span class="de-content-label">Practice</span>
-    <h2>Hidden Work Estimator</h2>
-    <p>Look at a simple-sounding task and spot the work that needs to be included before estimating.</p>
-    <button type="button" class="de-guide-activity__start" data-hidden-work-start>Start the activity</button>
-  </div>
-  <noscript>
-    <p>This activity needs JavaScript, but the checklist above still shows the hidden work to consider.</p>
-  </noscript>
-</section>
-
 ## Scenario
 
 You are asked to update a report so it includes a new weekly metric. The data may already exist, but nobody is sure which system owns it.

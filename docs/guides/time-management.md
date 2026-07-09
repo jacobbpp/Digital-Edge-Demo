@@ -60,11 +60,11 @@ Do not estimate a vague task. Break it down first.
   <label><input type="checkbox"> When will I check progress?</label>
 </div>
 
-<section class="de-guide-activity" data-checklist-activity="break-it-down">
+<section class="de-guide-activity" data-task-triage-board>
   <div class="de-guide-activity__intro">
     <span class="de-content-label">Practice</span>
-    <h2>Break It Down</h2>
-    <p>Turn a vague goal into smaller actions that are easier to plan, review, and complete.</p>
+    <h2>Task Triage Board</h2>
+    <p>Sort messy work into what to do now, schedule, ask for help with, or defer.</p>
     <button type="button" class="de-guide-activity__start" data-activity-start>Start the activity</button>
   </div>
 </section>

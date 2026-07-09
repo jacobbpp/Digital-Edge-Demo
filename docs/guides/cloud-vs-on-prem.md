@@ -55,11 +55,11 @@ Cloud and on-prem are two broad ways organisations run technology systems. The i
   </article>
 </div>
 
-<section class="de-guide-activity" data-matching-activity="responsibility-sorter">
+<section class="de-guide-activity" data-risk-splitter>
   <div class="de-guide-activity__intro">
     <span class="de-content-label">Practice</span>
-    <h2>Responsibility Sorter</h2>
-    <p>Sort common responsibilities between the cloud provider, the organisation, or both.</p>
+    <h2>Responsibility Split</h2>
+    <p>Assign cloud responsibilities and watch how the risk picture changes.</p>
     <button type="button" class="de-guide-activity__start" data-activity-start>Start the activity</button>
   </div>
 </section>

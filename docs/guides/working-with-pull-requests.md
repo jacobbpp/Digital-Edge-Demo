@@ -119,11 +119,11 @@ Do a final self-review. Many issues are easier to fix before asking someone else
   </ol>
 </details>
 
-<section class="de-guide-activity" data-checklist-activity="pr-readiness">
+<section class="de-guide-activity" data-reviewer-inbox>
   <div class="de-guide-activity__intro">
     <span class="de-content-label">Practice</span>
-    <h2>PR Readiness Check</h2>
-    <p>Review a mock pull request and flag what should be added before asking for review.</p>
+    <h2>Reviewer Inbox</h2>
+    <p>Review three mock pull requests and decide which ones are ready.</p>
     <button type="button" class="de-guide-activity__start" data-activity-start>Start the activity</button>
   </div>
 </section>

@@ -58,11 +58,11 @@ Technology teams need a shared language for things going wrong. Clear language h
   <label><input type="checkbox"> What changed recently?</label>
 </div>
 
-<section class="de-guide-activity" data-choice-activity="issue-classifier">
+<section class="de-guide-activity" data-incident-desk>
   <div class="de-guide-activity__intro">
     <span class="de-content-label">Practice</span>
-    <h2>Classify The Issue</h2>
-    <p>Decide whether each workplace example is an incident, bug, problem, or request.</p>
+    <h2>Incident Triage Desk</h2>
+    <p>Classify incoming reports and choose the first response.</p>
     <button type="button" class="de-guide-activity__start" data-activity-start>Start the activity</button>
   </div>
 </section>

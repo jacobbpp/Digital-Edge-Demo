@@ -73,15 +73,6 @@ Do not compare a polished sales demo against a vague idea of other options. Use 
 | Maintainability | Who will own it, update it, and fix issues? |
 | Accessibility | Can the people who need it actually use it? |
 
-<section class="de-guide-activity" data-checklist-activity="tool-fit-scorecard">
-  <div class="de-guide-activity__intro">
-    <span class="de-content-label">Practice</span>
-    <h2>Tool Fit Scorecard</h2>
-    <p>Choose the criteria that matter before recommending a new tool.</p>
-    <button type="button" class="de-guide-activity__start" data-activity-start>Start the activity</button>
-  </div>
-</section>
-
 ## Common Tool Choice Traps
 
 <div class="de-callout-grid">

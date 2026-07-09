@@ -131,36 +131,37 @@
 
   function executeJavaScript(source, outputElement) {
     const logs = [];
-    const originalConsole = {
-      log: console.log,
-      warn: console.warn,
-      error: console.error
-    };
 
-    outputElement.textContent = "Running...\n";
+    function render() {
+      outputElement.textContent = logs.length ? logs.join("\n") : "Running...\n";
+    }
 
     function capture(type, values) {
       logs.push(values.map((value) => {
         if (typeof value === "string") return value;
         return JSON.stringify(value, null, 2);
       }).join(" "));
-      originalConsole[type](...values);
+      console[type](...values);
+      render();
     }
 
-    console.log = (...values) => capture("log", values);
-    console.warn = (...values) => capture("warn", values);
-    console.error = (...values) => capture("error", values);
+    const sandboxConsole = {
+      log: (...values) => capture("log", values),
+      warn: (...values) => capture("warn", values),
+      error: (...values) => capture("error", values)
+    };
+
+    outputElement.textContent = "Running...\n";
 
     try {
-      const result = Function(`"use strict";\n${source}`)();
+      const result = Function("console", `"use strict";\n${source}`)(sandboxConsole);
       if (result !== undefined) logs.push(String(result));
-      outputElement.textContent = logs.length ? logs.join("\n") : "Done. No output.";
+      render();
+      window.setTimeout(() => {
+        if (!logs.length) outputElement.textContent = "Done. No output.";
+      }, 0);
     } catch (error) {
       outputElement.textContent = `${error.message || error}\n`;
-    } finally {
-      console.log = originalConsole.log;
-      console.warn = originalConsole.warn;
-      console.error = originalConsole.error;
     }
   }
 
@@ -250,7 +251,9 @@
     let activeCalendarUrl = "";
 
     function formatIcsDate(value) {
-      return new Date(value).toISOString().replace(/[-:]/g, "").replace(/\.\d{3}Z$/, "Z");
+      const date = new Date(value);
+      if (Number.isNaN(date.getTime())) return null;
+      return date.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}Z$/, "Z");
     }
 
     function escapeIcsText(value) {
@@ -264,6 +267,11 @@
     function buildCalendarUrl(card) {
       if (!card.dataset.eventStart || !card.dataset.eventEnd) return "";
 
+      const dtStamp = formatIcsDate(new Date().toISOString());
+      const dtStart = formatIcsDate(card.dataset.eventStart);
+      const dtEnd = formatIcsDate(card.dataset.eventEnd);
+      if (!dtStamp || !dtStart || !dtEnd) return "";
+
       const uid = `${card.dataset.eventStart}-${card.dataset.eventTitle || "digital-edge-event"}`.replace(/[^a-z0-9]+/gi, "-").toLowerCase();
       const content = [
         "BEGIN:VCALENDAR",
@@ -271,9 +279,9 @@
         "PRODID:-//BPP Digital Edge//Events//EN",
         "BEGIN:VEVENT",
         `UID:${uid}@digital-edge`,
-        `DTSTAMP:${formatIcsDate(new Date().toISOString())}`,
-        `DTSTART:${formatIcsDate(card.dataset.eventStart)}`,
-        `DTEND:${formatIcsDate(card.dataset.eventEnd)}`,
+        `DTSTAMP:${dtStamp}`,
+        `DTSTART:${dtStart}`,
+        `DTEND:${dtEnd}`,
         `SUMMARY:${escapeIcsText(card.dataset.eventTitle || "Digital Edge event")}`,
         `DESCRIPTION:${escapeIcsText(card.dataset.eventDescription || "Digital Edge event")}`,
         `LOCATION:${escapeIcsText(card.dataset.eventLocation || "Online")}`,

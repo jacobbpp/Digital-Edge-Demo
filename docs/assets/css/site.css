@@ -1884,6 +1884,10 @@ body.de-modal-open {
   box-shadow: 0 22px 58px rgba(23, 33, 43, 0.12);
 }
 
+.de-news-hero--single {
+  grid-template-columns: 1fr;
+}
+
 .de-events-hero {
   margin: 28px 0 32px;
   padding: 38px;

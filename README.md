@@ -24,7 +24,7 @@ python3 -m mkdocs build
 ## Structure
 
 - `docs/` contains the website pages and assets.
-- `docs/guides/` contains guide source content. Some older pathway areas are retained in source but hidden from the public build.
+- `docs/guides/` contains guide source content retained for future use but hidden from the public build.
 - `docs/assets/css/site.css` contains the custom Digital Edge styling.
 - `docs/assets/js/site.js` contains search polish, event modal behaviour, copy buttons, and guided JavaScript practice.
 - `hooks/search_filter.py` hides guide output from the public build, adjusts the built search index, and opens Spotify links safely.

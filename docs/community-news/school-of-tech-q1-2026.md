@@ -1,17 +1,11 @@
 # BPP School of Tech Newsletter: Q1 2026
 
-<section class="de-news-hero">
+<section class="de-news-hero de-news-hero--single">
   <div>
     <p class="de-kicker">Q1 2026 Edition</p>
     <h1>BPP School of Tech Newsletter.</h1>
     <p>Welcome to the School of Technology Q1 2026 web edition. This version turns the hosted newsletter into a cleaner, interactive page for learners and apprentices to scan, explore, and act on.</p>
   </div>
-  <aside>
-    <span class="de-pill">Source</span>
-    <h2>Original hosted edition</h2>
-    <p>This page is adapted from the School of Tech newsletter hosted by Estio.</p>
-    <a href="https://sotnews.estio.online/">View the original newsletter</a>
-  </aside>
 </section>
 
 <section class="de-news-stats" aria-label="Newsletter highlights">

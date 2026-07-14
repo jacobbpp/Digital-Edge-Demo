@@ -12,11 +12,7 @@ from xml.etree import ElementTree
 
 EXCLUDED_LOCATIONS = {""}
 HIDDEN_LOCATION_PREFIXES = (
-    "guides/data-analytics/",
-    "guides/devops/",
-    "guides/software/",
-    "guides/technology/",
-    "guides/trending-topics/",
+    "guides/",
 )
 SPOTIFY_URL = "https://open.spotify.com/show/4wLAuGMARmMNMvqGnR9iQy"
 FEATURED_EVENT_PATTERN = re.compile(

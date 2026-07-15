@@ -1,6 +1,6 @@
 site_name: Digital Edge
 site_description: Practical digital skills articles, events, community news, people profiles, and podcast links.
-site_url: https://jacobbpp.github.io/Digital-Edge-Demo/
+site_url: https://bpp-sot.github.io/Digital-Edge/
 
 theme:
   name: mkdocs

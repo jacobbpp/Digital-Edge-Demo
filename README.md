@@ -1,34 +1,17 @@
-# Digital Edge Demo
+# Digital Edge
 
-An MkDocs website for Digital Edge: articles, events, community news, people profiles, and podcast links.
+👋 Hey, if you've ended up here, you've probably clicked through from the [Digital Edge](https://bpp-sot.github.io/Digital-Edge/) site out of curiosity to see what's behind the scenes. Welcome!
 
-The published site is configured for GitHub Pages at `https://jacobbpp.github.io/Digital-Edge-Demo/`. For local development, use the local MkDocs config so the preview serves cleanly from `/`.
+**Digital Edge** is a site built for learners: articles, events, community news, and podcast conversations on digital skills, AI, and technology, all in one place. This repository is the source code that builds and publishes that site.
 
-## Run locally
+## What's actually here?
 
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-python3 -m mkdocs serve -f mkdocs.local.yml --dev-addr 127.0.0.1:8001
-```
+The site is built with [MkDocs](https://www.mkdocs.org/), a tool that turns plain text (Markdown) files into a full website. So most of "the app" is just:
 
-Then open `http://127.0.0.1:8001/`.
+- **Content**: the articles, event pages, and podcast write-ups, written as Markdown files in [docs/](docs/)
+- **A bit of styling and interactivity**: some CSS and JavaScript in [docs/assets/](docs/assets/) to make things look and feel right
+- **Config**: a couple of settings files ([mkdocs.yml](mkdocs.yml)) that tell MkDocs how to put it all together
 
-## Build
+Every time content is updated and pushed here, GitHub automatically rebuilds and republishes the live site. No manual deployment needed.
 
-```bash
-python3 -m mkdocs build
-```
-
-## Structure
-
-- `docs/` contains the website pages and assets.
-- `docs/guides/` contains guide source content retained for future use but hidden from the public build.
-- `docs/assets/css/site.css` contains the custom Digital Edge styling.
-- `docs/assets/js/site.js` contains search polish, event modal behaviour, copy buttons, and guided JavaScript practice.
-- `hooks/search_filter.py` hides guide output from the public build, adjusts the built search index, and opens Spotify links safely.
-- `mkdocs.yml` is the published site configuration.
-- `mkdocs.local.yml` inherits the published config and overrides `site_url` for local preview.
-
-The public site does not inject analytics or load third-party visual/CDN assets by default. External links, such as Spotify and source links in community news items, remain outbound links that visitors choose to open.
+You don't need to understand any of this to enjoy the site, but if source code is your kind of curiosity, hopefully this gives you a useful starting point. 🚀

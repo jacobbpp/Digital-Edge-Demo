@@ -25,6 +25,8 @@ FEATURED_ARTICLE_PATTERN = re.compile(
 )
 FRONTMATTER_PATTERN = re.compile(r"\A---\s*\n(?P<body>.*?)\n---\s*\n", re.DOTALL)
 FRONTMATTER_FIELD_PATTERN = re.compile(r'^(?P<key>[a-zA-Z_]+):\s*"?(?P<value>[^"\n]*)"?\s*$', re.MULTILINE)
+PERSON_CARD_PATTERN = re.compile(r'<article class="de-person-card">.*?</article>', re.DOTALL)
+PERSON_NAME_PATTERN = re.compile(r'de-person-card__name"[^>]*>(?P<name>[^<]+)</a>')
 EVENT_CARD_PATTERN = re.compile(r"<button\s+class=\"de-event-card\"(?P<body>.*?)</button>", re.DOTALL)
 EVENT_ATTR_PATTERN = re.compile(r"\sdata-event-(?P<name>[a-z-]+)=\"(?P<value>[^\"]*)\"", re.DOTALL)
 EVENT_SUMMARY_PATTERN = re.compile(r"<p>(?P<summary>.*?)</p>", re.DOTALL)
@@ -251,6 +253,55 @@ def replace_featured_article(markdown: str, config) -> str:
     return FEATURED_ARTICLE_PATTERN.sub(featured_article_card(config), markdown, count=1)
 
 
+def author_latest_dates(config) -> dict[str, datetime]:
+    articles_dir = Path(config.docs_dir) / "articles"
+    dates: dict[str, datetime] = {}
+    if not articles_dir.exists():
+        return dates
+
+    for article_path in articles_dir.glob("*.md"):
+        if article_path.stem == "index":
+            continue
+
+        fields = parse_frontmatter(article_path.read_text(encoding="utf-8"))
+        if fields.get("type", "article") != "article":
+            continue
+
+        author = fields.get("author", "").strip()
+        if not author:
+            continue
+
+        try:
+            published = datetime.fromisoformat(fields.get("date", ""))
+        except ValueError:
+            continue
+
+        if published.tzinfo is None:
+            published = published.replace(tzinfo=timezone.utc)
+
+        if author not in dates or published > dates[author]:
+            dates[author] = published
+
+    return dates
+
+
+def reorder_person_cards(markdown: str, config) -> str:
+    dates = author_latest_dates(config)
+    cards = PERSON_CARD_PATTERN.findall(markdown)
+    if not cards:
+        return markdown
+
+    no_article = datetime.min.replace(tzinfo=timezone.utc)
+
+    def sort_key(card: str) -> datetime:
+        name_match = PERSON_NAME_PATTERN.search(card)
+        name = name_match.group("name").strip() if name_match else ""
+        return dates.get(name, no_article)
+
+    ordered = iter(sorted(cards, key=sort_key, reverse=True))
+    return PERSON_CARD_PATTERN.sub(lambda _match: next(ordered), markdown)
+
+
 def is_hidden_location(location: str) -> bool:
     page_location = location.split("#", 1)[0]
     return any(page_location.startswith(prefix) for prefix in HIDDEN_LOCATION_PREFIXES)
@@ -282,9 +333,12 @@ def on_post_page(output: str, page, config, **kwargs) -> str:
 
 
 def on_page_markdown(markdown: str, page, config, **kwargs) -> str:
-    if getattr(page.file, "src_path", "") == "index.md":
+    src_path = getattr(page.file, "src_path", "")
+    if src_path == "index.md":
         markdown = replace_featured_event(markdown, config)
         markdown = replace_featured_article(markdown, config)
+    elif src_path == "people/index.md":
+        markdown = reorder_person_cards(markdown, config)
     return markdown
 
 

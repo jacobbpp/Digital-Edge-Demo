@@ -2334,6 +2334,27 @@
     if (start) start.addEventListener("click", startActivity);
   }
 
+  function installArticlePolls() {
+    document.querySelectorAll("[data-article-poll]").forEach((poll) => {
+      const choices = poll.querySelectorAll("[data-poll-choice]");
+      const feedback = poll.querySelector("[data-poll-feedback]");
+      if (!choices.length || !feedback) return;
+
+      choices.forEach((choice) => {
+        choice.addEventListener("click", () => {
+          choices.forEach((other) => {
+            other.classList.remove("de-article-poll__choice--selected");
+            other.setAttribute("aria-pressed", "false");
+          });
+          choice.classList.add("de-article-poll__choice--selected");
+          choice.setAttribute("aria-pressed", "true");
+          feedback.textContent = choice.getAttribute("data-feedback") || "";
+          feedback.hidden = false;
+        });
+      });
+    });
+  }
+
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", installCodeCopyButtons);
     document.addEventListener("DOMContentLoaded", installInlineGuidedPractice);
@@ -2348,6 +2369,7 @@
     document.addEventListener("DOMContentLoaded", installMatchingActivities);
     document.addEventListener("DOMContentLoaded", installDistinctGuideActivities);
     document.addEventListener("DOMContentLoaded", installBiasGame);
+    document.addEventListener("DOMContentLoaded", installArticlePolls);
   } else {
     installCodeCopyButtons();
     installInlineGuidedPractice();
@@ -2362,6 +2384,7 @@
     installMatchingActivities();
     installDistinctGuideActivities();
     installBiasGame();
+    installArticlePolls();
   }
 
   installSearchPolish(40);

@@ -81,4 +81,21 @@
     <a class="de-person-card__cta" href="idris-fabiyi/">View profile</a>
   </article>
 
+  <article class="de-person-card">
+    <div class="de-person-card__header">
+      <span class="de-person-card__initials" aria-hidden="true">GM</span>
+      <div>
+        <a class="de-person-card__name" href="gemma-mckay/">Gemma McKay</a>
+        <p class="de-person-card__role">Head of Programmes, Data Science &amp; Software Engineering</p>
+      </div>
+    </div>
+    <p>Sustainable technology, green computing, data science, and software engineering, translating environmental impact into practical professional judgement.</p>
+    <div class="de-person-card__topics" aria-label="Gemma McKay subject areas">
+      <span>Sustainability</span>
+      <span>Green computing</span>
+      <span>Data science</span>
+    </div>
+    <a class="de-person-card__cta" href="gemma-mckay/">View profile</a>
+  </article>
+
 </div>

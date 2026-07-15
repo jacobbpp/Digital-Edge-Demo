@@ -27,6 +27,8 @@
   <button type="button" data-article-tag="Marketing">Marketing</button>
   <button type="button" data-article-tag="Workflows">Workflows</button>
   <button type="button" data-article-tag="Adoption">Adoption</button>
+  <button type="button" data-article-tag="Sustainability">Sustainability</button>
+  <button type="button" data-article-tag="Careers">Careers</button>
 </div>
 
 <div class="de-article-filter-bar" data-article-filter-status hidden>
@@ -35,6 +37,28 @@
 </div>
 
 <div class="de-article-list">
+  <article class="de-article-card" data-article-tags="AI,Careers" data-article-author="Matt Lucas">
+    <div class="de-article-tags" aria-label="Article tags">
+      <button type="button" data-article-tag="AI">AI</button>
+      <button type="button" data-article-tag="Careers">Careers</button>
+    </div>
+    <a class="de-article-card__link" href="are-you-an-ai-optimist/">
+      <h3>Are You an AI Optimist?</h3>
+      <p>Technological capability alone does not decide the future we get. The choices we make shape whether it turns out well.</p>
+    </a>
+    <p class="de-byline">By <a href="../people/matt-lucas/" data-author-filter="Matt Lucas">Matt Lucas</a> · 9 July 2026</p>
+  </article>
+  <article class="de-article-card" data-article-tags="Sustainability,AI" data-article-author="Gemma McKay">
+    <div class="de-article-tags" aria-label="Article tags">
+      <button type="button" data-article-tag="Sustainability">Sustainability</button>
+      <button type="button" data-article-tag="AI">AI</button>
+    </div>
+    <a class="de-article-card__link" href="building-better-tech/">
+      <h3>Building Better Tech</h3>
+      <p>Why sustainable innovation is becoming as important a professional judgement as technical skill.</p>
+    </a>
+    <p class="de-byline">By <a href="../people/gemma-mckay/" data-author-filter="Gemma McKay">Gemma McKay</a> · 6 July 2026</p>
+  </article>
   <article class="de-article-card" data-article-tags="Marketing,AI" data-article-author="David Green">
     <div class="de-article-tags" aria-label="Article tags">
       <button type="button" data-article-tag="Marketing">Marketing</button>

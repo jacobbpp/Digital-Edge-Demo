@@ -26,3 +26,15 @@ Matthew Lucas, known as Matt, brings over 25 years of prior IT industry experien
 He is a Fellow of the British Computer Society and was for several years a regular contributor to its magazine, with a regular column on IT Futures. His research interests are around IT skills formation, in particular the responsiveness of the UK IT skills ecosystem when it comes to enabling the pipeline of talent.
 
 Matt is also enthusiastic about the opportunities presented by AI and is keen to help businesses adopt it ethically and appropriately.
+
+## Digital Edge Articles
+
+<div class="de-article-list de-article-list--profile">
+  <article class="de-article-card">
+    <a class="de-article-card__link" href="../../articles/are-you-an-ai-optimist/">
+      <h3>Are You an AI Optimist?</h3>
+      <p>Technological capability alone does not decide the future we get. The choices we make shape whether it turns out well.</p>
+    </a>
+    <p class="de-article-card__meta">Article · <a href="../../articles/?tag=AI">AI</a>, <a href="../../articles/?tag=Careers">Careers</a></p>
+  </article>
+</div>

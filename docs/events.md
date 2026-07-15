@@ -25,30 +25,6 @@
   <button
     class="de-event-card"
     type="button"
-    data-event-filter-key="performance"
-    data-event-title="Imposter Syndrome and Building Confidence"
-    data-event-type="Performance & Impact Session"
-    data-event-status="Upcoming"
-    data-event-date="Tuesday 14 July 2026"
-    data-event-time="13:00-14:00"
-    data-event-start="2026-07-14T13:00:00+01:00"
-    data-event-end="2026-07-14T14:00:00+01:00"
-    data-event-location="Online"
-    data-event-description="Join us to learn what imposter syndrome really is and the many ways in which it can present itself and show up in different areas of your life, sometimes in quite surprising ways."
-    data-event-audience="Learners and apprentices who want to build confidence, recognise imposter syndrome, and develop practical strategies for personal and professional growth."
-  >
-    <div class="de-event-tags">
-      <span class="de-event-type de-event-type--performance">Performance &amp; Impact</span>
-      <span class="de-event-status de-event-status--upcoming">Upcoming</span>
-    </div>
-    <strong>Imposter Syndrome and Building Confidence</strong>
-    <span>Tuesday 14 July 2026 · 13:00-14:00</span>
-    <p>Performance &amp; Impact session on recognising imposter syndrome and building confidence.</p>
-  </button>
-
-  <button
-    class="de-event-card"
-    type="button"
     data-event-filter-key="debate"
     data-event-title="Is Your Data Up for Sale?"
     data-event-type="Digital Edge Debate"
@@ -319,6 +295,28 @@
   </div>
 
 <div class="de-event-grid" aria-label="Past Digital Edge events">
+  <button
+    class="de-event-card de-event-card--past"
+    type="button"
+    data-event-filter-key="performance"
+    data-event-title="Imposter Syndrome and Building Confidence"
+    data-event-type="Performance & Impact Session"
+    data-event-status="Past"
+    data-event-date="Tuesday 14 July 2026"
+    data-event-time="13:00-14:00"
+    data-event-location="Online"
+    data-event-description="This past session explored what imposter syndrome really is and the many ways in which it can present itself and show up in different areas of your life, sometimes in quite surprising ways."
+    data-event-audience="Learners and apprentices who want to build confidence, recognise imposter syndrome, and develop practical strategies for personal and professional growth."
+  >
+    <div class="de-event-tags">
+      <span class="de-event-type de-event-type--performance">Performance &amp; Impact</span>
+      <span class="de-event-status de-event-status--past">Past</span>
+    </div>
+    <strong>Imposter Syndrome and Building Confidence</strong>
+    <span>Tuesday 14 July 2026 · 13:00-14:00</span>
+    <p>Performance &amp; Impact session on recognising imposter syndrome and building confidence.</p>
+  </button>
+
   <button
     class="de-event-card de-event-card--past"
     type="button"

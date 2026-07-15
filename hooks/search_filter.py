@@ -19,6 +19,12 @@ FEATURED_EVENT_PATTERN = re.compile(
     r"<!-- de-feature-event:start -->.*?<!-- de-feature-event:end -->",
     re.DOTALL,
 )
+FEATURED_ARTICLE_PATTERN = re.compile(
+    r"<!-- de-feature-article:start -->.*?<!-- de-feature-article:end -->",
+    re.DOTALL,
+)
+FRONTMATTER_PATTERN = re.compile(r"\A---\s*\n(?P<body>.*?)\n---\s*\n", re.DOTALL)
+FRONTMATTER_FIELD_PATTERN = re.compile(r'^(?P<key>[a-zA-Z_]+):\s*"?(?P<value>[^"\n]*)"?\s*$', re.MULTILINE)
 EVENT_CARD_PATTERN = re.compile(r"<button\s+class=\"de-event-card\"(?P<body>.*?)</button>", re.DOTALL)
 EVENT_ATTR_PATTERN = re.compile(r"\sdata-event-(?P<name>[a-z-]+)=\"(?P<value>[^\"]*)\"", re.DOTALL)
 EVENT_SUMMARY_PATTERN = re.compile(r"<p>(?P<summary>.*?)</p>", re.DOTALL)
@@ -173,6 +179,78 @@ def replace_featured_event(markdown: str, config) -> str:
     return FEATURED_EVENT_PATTERN.sub(featured_event_card(config), markdown, count=1)
 
 
+def parse_frontmatter(text: str) -> dict[str, str]:
+    match = FRONTMATTER_PATTERN.match(text)
+    if not match:
+        return {}
+
+    fields: dict[str, str] = {}
+    for field_match in FRONTMATTER_FIELD_PATTERN.finditer(match.group("body")):
+        key = field_match.group("key").strip()
+        if key not in fields:
+            fields[key] = field_match.group("value").strip()
+
+    return fields
+
+
+def latest_article(config) -> dict[str, str] | None:
+    articles_dir = Path(config.docs_dir) / "articles"
+    if not articles_dir.exists():
+        return None
+
+    latest: tuple[datetime, dict[str, str]] | None = None
+
+    for article_path in articles_dir.glob("*.md"):
+        if article_path.stem == "index":
+            continue
+
+        fields = parse_frontmatter(article_path.read_text(encoding="utf-8"))
+        if fields.get("type", "article") != "article":
+            continue
+
+        try:
+            published = datetime.fromisoformat(fields.get("date", ""))
+        except ValueError:
+            continue
+
+        if published.tzinfo is None:
+            published = published.replace(tzinfo=timezone.utc)
+
+        if latest is None or published > latest[0]:
+            fields["slug"] = article_path.stem
+            latest = (published, fields)
+
+    return latest[1] if latest else None
+
+
+def featured_article_card(config) -> str:
+    article = latest_article(config)
+    if not article:
+        return """<!-- de-feature-article:start -->
+  <a href="articles/">
+    <span>Article</span>
+    <strong>Read the Latest Articles</strong>
+    <p>Opinionated, practical writing on AI, marketing, sustainability, and professional judgement.</p>
+  </a>
+  <!-- de-feature-article:end -->"""
+
+    title = escape(article.get("title", "Latest Digital Edge article"), quote=False)
+    summary = escape(article.get("description", "Read the latest Digital Edge article."), quote=False)
+    slug = escape(article.get("slug", ""), quote=True)
+
+    return f"""<!-- de-feature-article:start -->
+  <a href="articles/{slug}/">
+    <span>Article</span>
+    <strong>{title}</strong>
+    <p>{summary}</p>
+  </a>
+  <!-- de-feature-article:end -->"""
+
+
+def replace_featured_article(markdown: str, config) -> str:
+    return FEATURED_ARTICLE_PATTERN.sub(featured_article_card(config), markdown, count=1)
+
+
 def is_hidden_location(location: str) -> bool:
     page_location = location.split("#", 1)[0]
     return any(page_location.startswith(prefix) for prefix in HIDDEN_LOCATION_PREFIXES)
@@ -205,7 +283,8 @@ def on_post_page(output: str, page, config, **kwargs) -> str:
 
 def on_page_markdown(markdown: str, page, config, **kwargs) -> str:
     if getattr(page.file, "src_path", "") == "index.md":
-        return replace_featured_event(markdown, config)
+        markdown = replace_featured_event(markdown, config)
+        markdown = replace_featured_article(markdown, config)
     return markdown
 
 

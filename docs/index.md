@@ -47,11 +47,13 @@
 ## Featured From Digital Edge
 
 <div class="de-feature-list">
+  <!-- de-feature-article:start -->
   <a href="articles/from-mythos-to-fable/">
     <span>Article</span>
     <strong>From Mythos to Fable</strong>
     <p>A practical warning light for organisations bringing frontier AI into everyday work.</p>
   </a>
+  <!-- de-feature-article:end -->
   <!-- de-feature-event:start -->
   <a href="events/">
     <span>Event</span>

@@ -13,12 +13,14 @@
 </section>
 
 <section class="de-article-feature">
+  <!-- de-feature-article-hero:start -->
   <a href="chatgpt-ads-marketing-learning-apprentices/">
     <span class="de-card__label">Featured article</span>
     <h2>ChatGPT Ads: What This Means for Marketing, Learning, and Apprentices</h2>
     <p>AI answers are becoming commercial spaces. This article explores what happens when recommendations, advertising, trust, and learning start to overlap.</p>
     <strong>Read the feature</strong>
   </a>
+  <!-- de-feature-article-hero:end -->
 </section>
 
 <div class="de-topic-browser" aria-label="Browse article topics">

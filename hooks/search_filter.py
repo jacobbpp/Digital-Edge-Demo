@@ -23,6 +23,10 @@ FEATURED_ARTICLE_PATTERN = re.compile(
     r"<!-- de-feature-article:start -->.*?<!-- de-feature-article:end -->",
     re.DOTALL,
 )
+FEATURED_ARTICLE_HERO_PATTERN = re.compile(
+    r"<!-- de-feature-article-hero:start -->.*?<!-- de-feature-article-hero:end -->",
+    re.DOTALL,
+)
 FRONTMATTER_PATTERN = re.compile(r"\A---\s*\n(?P<body>.*?)\n---\s*\n", re.DOTALL)
 FRONTMATTER_FIELD_PATTERN = re.compile(r'^(?P<key>[a-zA-Z_]+):\s*"?(?P<value>[^"\n]*)"?\s*$', re.MULTILINE)
 PERSON_CARD_PATTERN = re.compile(r'<article class="de-person-card">.*?</article>', re.DOTALL)
@@ -253,6 +257,36 @@ def replace_featured_article(markdown: str, config) -> str:
     return FEATURED_ARTICLE_PATTERN.sub(featured_article_card(config), markdown, count=1)
 
 
+def featured_article_hero(config) -> str:
+    article = latest_article(config)
+    if not article:
+        return """<!-- de-feature-article-hero:start -->
+  <a href="">
+    <span class="de-card__label">Featured article</span>
+    <h2>Read the Latest Articles</h2>
+    <p>Opinionated, practical writing on AI, marketing, sustainability, and professional judgement.</p>
+    <strong>Read the feature</strong>
+  </a>
+  <!-- de-feature-article-hero:end -->"""
+
+    title = escape(article.get("title", "Latest Digital Edge article"), quote=False)
+    summary = escape(article.get("description", "Read the latest Digital Edge article."), quote=False)
+    slug = escape(article.get("slug", ""), quote=True)
+
+    return f"""<!-- de-feature-article-hero:start -->
+  <a href="{slug}/">
+    <span class="de-card__label">Featured article</span>
+    <h2>{title}</h2>
+    <p>{summary}</p>
+    <strong>Read the feature</strong>
+  </a>
+  <!-- de-feature-article-hero:end -->"""
+
+
+def replace_featured_article_hero(markdown: str, config) -> str:
+    return FEATURED_ARTICLE_HERO_PATTERN.sub(featured_article_hero(config), markdown, count=1)
+
+
 def author_latest_dates(config) -> dict[str, datetime]:
     articles_dir = Path(config.docs_dir) / "articles"
     dates: dict[str, datetime] = {}
@@ -339,6 +373,8 @@ def on_page_markdown(markdown: str, page, config, **kwargs) -> str:
         markdown = replace_featured_article(markdown, config)
     elif src_path == "people/index.md":
         markdown = reorder_person_cards(markdown, config)
+    elif src_path == "articles/index.md":
+        markdown = replace_featured_article_hero(markdown, config)
     return markdown
 
 

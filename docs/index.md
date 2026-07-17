@@ -30,7 +30,7 @@
   <a class="de-card" href="events/">
     <span class="de-card__label">Attend</span>
     <h3>Events</h3>
-    <p>Masterclasses and past sessions on practical digital confidence, technology, and workplace change.</p>
+    <p>Upcoming events and masterclasses, and access to past sessions.</p>
   </a>
   <a class="de-card" href="community-news/">
     <span class="de-card__label">Browse</span>

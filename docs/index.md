@@ -2,7 +2,7 @@
   <div class="de-hero__content">
     <p class="de-kicker">Digital skills, made practical</p>
     <h1>Giving you the Digital Edge with articles, events, community news and podcasts.</h1>
-    <p class="de-lede">Digital Edge brings together strategic thinking, event resources, community updates, podcast conversations, and practical examples for people who want to apply what they read.</p>
+    <p class="de-lede">Digital Edge brings together strategic thinking, event resources, community updates and podcast conversations, to challenge your thinking and broaden your knowledge.</p>
     <div class="de-actions">
       <a class="de-button de-button--primary" href="articles/">Read articles</a>
       <a class="de-button de-button--secondary" href="events/">View events</a>
